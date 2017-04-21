@@ -6,7 +6,7 @@ A query tree structure, along with order and paging specifiers, allows a search 
 
 This example demonstrates a simple search with default ordering and paging options:
 
-Synchronous
+### Synchronous
 
 ```cs
 var query = new Query(
@@ -14,16 +14,23 @@ var query = new Query(
     Op.GreaterThan("runtime", 200)
 );
 
-// Execute the search
-var results = client.Entries.Search(query);
+// Execute the search returning entries
+PagedList<Entry> = client.Entries.Search(query);
+
+// Execute the search returning typed models
+PagedList<Movie> result = client.Entries.Search<Movie>(query);
 ```
 
-Asynchronous
+### Asynchronous
 
 ```cs
-// Execute the search asynchronously
-var results = await client.Entries.SearchAsync(query);
+// Execute the search asynchronously  returning entries
+PagedList<Entry> results = await client.Entries.SearchAsync(query);
+
+// Execute the search returning typed models
+PagedList<Movie> result = await client.Entries.SearchAsync<Movie>(query);
 ```
+
 
 ## Sub-queries
 
