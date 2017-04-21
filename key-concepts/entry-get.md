@@ -56,7 +56,7 @@ Entry movie = client.Entries.Get(movieGuid, "fr-fr", 3);
 
 ## Get typed model by Guid id
 
-Gets an typed entry model by its `Guid` identifier.
+Gets a typed entry model by its `Guid` identifier.
 
 ### Syntax
 
