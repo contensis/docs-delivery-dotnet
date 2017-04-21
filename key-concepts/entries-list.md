@@ -35,7 +35,7 @@ public PagedList<Entry> List(PageOptions pageOptions = null)
 
 *pageOptions*
 > Type: [PageOptions](/model/pageoptions.md)   
-> Paging options for specify the page index and size.
+> Paging options for specifying the page index and size.
 
 ### Remarks
 
@@ -76,7 +76,7 @@ public PagedList<T> List<T>(PageOptions pageOptions = null) where T: class
 
 *pageOptions*
 > Type: [PageOptions](/model/pageoptions.md)   
-> Paging options for specify the page index and size.
+> Paging options for specifying the page index and size.
 
 ### Remarks
 
@@ -614,7 +614,7 @@ public PagedList<Entry> List(EntryListOptions listOptions)
 
 *listOptions*
 > Type: `EntryListOptions`
-> Allows all parameters to be optional set and exposes less commonly used parameters.
+> Allows all parameters to be optionally set and exposes less commonly used parameters.
 
 ### Remarks
 
@@ -661,7 +661,7 @@ public PagedList<T> List<T>(EntryListOptions listOptions)
 
 *listOptions*
 > Type: `EntryListOptions`
-> Allows all parameters to be optional set and exposes less commonly used parameters.
+> Allows all parameters to be optionally set and exposes less commonly used parameters.
 
 ### Remarks
 
@@ -713,7 +713,7 @@ public Task<PagedList<Entry>> ListAsync(EntryListOptions listOptions)
 
 *listOptions*
 > Type: `EntryListOptions`  
-> Allows all parameters to be optional set and exposes less commonly used parameters.
+> Allows all parameters to be optionally set and exposes less commonly used parameters.
 
 ### Remarks
 
@@ -758,7 +758,7 @@ public async Task<PagedList<T>> ListAsync(EntryListOptions listOptions)
 
 *listOptions*
 > Type: `EntryListOptions`  
-> Allows all parameters to be optional set and exposes less commonly used parameters.
+> Allows all parameters to be optionally set and exposes less commonly used parameters.
 
 ### Remarks
 
