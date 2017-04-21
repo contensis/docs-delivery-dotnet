@@ -357,7 +357,7 @@ Gets an entry by its `string` identifier asynchronously.
 ### Syntax
 
 ```cs
-public async Task<T> GetAsync<T>(string id, string language = null, int linkDepth = 0)
+public async Task<T> GetAsync<T>(string id, string language = null, int linkDepth = 0) where T: class
 {
 }
 ```
