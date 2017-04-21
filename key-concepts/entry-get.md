@@ -36,7 +36,7 @@ public Entry Get(Guid id, string language = null, int linkDepth = 0)
 
 *linkDepth*
 > Type: `int`  
-> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
+> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 ### Remarks
 
@@ -81,7 +81,7 @@ public T Get<T>(Guid id, string language = null, int linkDepth = 0) where T: cla
 
 *linkDepth*
 > Type: `int`  
-> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
+> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 ### Remarks
 
@@ -131,7 +131,7 @@ public Entry Get(string id, string languageCode = null, int linkDepth = 0)
 
 *linkDepth*
 > Type: `int`  
-> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
+> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 ### Remarks
 
@@ -180,7 +180,7 @@ public T Get<T>(string id, string languageCode = null, int linkDepth = 0) where 
 
 *linkDepth*
 > Type: `int`  
-> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
+> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 ### Remarks
 
@@ -235,7 +235,7 @@ public async Task<Entry> GetAsync(Guid id, string language = null, int linkDepth
 
 *linkDepth*
 > Type: `int`  
-> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
+> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 ### Remarks
 
@@ -280,7 +280,7 @@ public async Task<T> GetAsync<T>(Guid id, string language = null, int linkDepth 
 
 *linkDepth*
 > Type: `int`  
-> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
+> The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 ### Remarks
 
