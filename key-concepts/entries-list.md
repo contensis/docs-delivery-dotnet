@@ -39,7 +39,7 @@ public PagedList<Entry> List(PageOptions pageOptions = null)
 
 ### Remarks
 
-The default for the pageOptions is PageSize: 20, PageIndex: 0.
+The default for the pageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -80,7 +80,7 @@ public PagedList<T> List<T>(PageOptions pageOptions = null) where T: class
 
 ### Remarks
 
-The default for the pageOptions is PageSize: 20, PageIndex: 0.
+The default for the pageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -130,7 +130,7 @@ public async Task<PagedList<Entry>> List(PageOptions pageOptions = null)
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -174,7 +174,7 @@ public async Task<PagedList<T>> ListAsync<T>(PageOptions pageOptions = null) whe
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -226,7 +226,7 @@ public PagedList<Entry> List(string contentTypeId, PageOptions pageOptions = nul
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -271,7 +271,7 @@ public PagedList<T> List<T>(string contentTypeId, PageOptions pageOptions = null
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -324,7 +324,7 @@ public async Task<PagedList<Entry>> ListAsync(string contentTypeId, PageOptions 
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -371,7 +371,7 @@ public async Task<PagedList<T>> ListAsync(string contentTypeId, PageOptions page
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -427,7 +427,7 @@ public PagedList<Entry> List(string contentTypeId, PageOptions pageOptions, ILis
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -476,7 +476,7 @@ public PagedList<T> List<T>(string contentTypeId, PageOptions pageOptions, IList
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -532,7 +532,7 @@ public async Task<PagedList<Entry>> ListAsync(string contentTypeId, PageOptions 
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -581,7 +581,7 @@ public async Task<PagedList<T>> ListAsync<T>(string contentTypeId, PageOptions p
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -618,7 +618,7 @@ public PagedList<Entry> List(EntryListOptions listOptions)
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -665,7 +665,7 @@ public PagedList<T> List<T>(EntryListOptions listOptions)
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -717,7 +717,7 @@ public Task<PagedList<Entry>> ListAsync(EntryListOptions listOptions)
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -762,7 +762,7 @@ public async Task<PagedList<T>> ListAsync(EntryListOptions listOptions)
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
