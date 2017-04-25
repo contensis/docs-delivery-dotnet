@@ -27,11 +27,11 @@ public PagedList<Entry> List(PageOptions pageOptions = null)
 
 *pageOptions*
 > Type: [PageOptions](/model/pageoptions.md)   
-> Paging options for specify the page index and size.
+> Paging options for specifying the page index and size.
 
 ### Remarks
 
-The default for the pageOptions is PageSize: 20, PageIndex: 0.
+The default for the pageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -57,7 +57,7 @@ Lists entries for all content types asynchronously, with paging.
 ### Syntax
 
 ```cs
-public Task<PagedList<Entry>> List(PageOptions pageOptions = null)
+public async Task<PagedList<Entry>> List(PageOptions pageOptions = null)
 {
 }
 ```
@@ -70,7 +70,7 @@ public Task<PagedList<Entry>> List(PageOptions pageOptions = null)
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -108,12 +108,12 @@ public PagedList<Entry> List(string contentTypeId, PageOptions pageOptions = nul
 > The id of the content type to restrict the entries by.
 
 *pageOptions*
-> Type: [PageOptions](/model/pageoptions.md) 
+> Type: [PageOptions](/model/pageoptions.md)  
 > Paging options for specifying the page index and size.
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -121,10 +121,10 @@ The default for the PageOptions is PageSize: 20, PageIndex: 0.
 // Create a client
 var client = ContensisClient.Create();
 
-// Get entries with the default paging options
+// Get entries based on the Movie content type with the default paging options
 var entries = client.Entries.List("movie");
 
-// Get all entries with specified paging options
+// Get all entries based on the Movie content type with specified paging options
 var entries = client.Entries.List("movie", new PageOptions(3, 10));
 ```
 
@@ -138,7 +138,7 @@ Lists entries for a specific content type.
 ### Syntax
 
 ```cs
-public Task<PagedList<Entry>> ListAsync(string contentTypeId, PageOptions pageOptions = null)
+public async Task<PagedList<Entry>> ListAsync(string contentTypeId, PageOptions pageOptions = null)
 {
 }
 ```
@@ -155,7 +155,7 @@ public Task<PagedList<Entry>> ListAsync(string contentTypeId, PageOptions pageOp
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -163,10 +163,10 @@ The default for the PageOptions is PageSize: 20, PageIndex: 0.
 // Create a client
 var client = ContensisClient.Create();
 
-// Get entries with the default paging options
+// Get entries based on the Movie content type with the default paging options
 var entries = await client.Entries.ListAsync("movie");
 
-// Get all entries with specified paging options
+// Get all entries based on the Movie content type with specified paging options
 var entries = await client.Entries.ListAsync("movie", new PageOptions(3, 10));
 ```
 
@@ -201,7 +201,7 @@ public PagedList<Entry> List(string contentTypeId, PageOptions pageOptions, ILis
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -209,9 +209,9 @@ The default for the PageOptions is PageSize: 20, PageIndex: 0.
 // Create a client
 var client = ContensisClient.Create();
 
-// Get all entries with the default paging options
-var entries = client.Entries.List("film", new PageOptions(3, 10), 
-    new [] {  } );
+// Get all entries based on the Movie content type with the default paging options
+var entries = client.Entries.List("movie", new PageOptions(3, 10), 
+    new [] { "title", "-releaseDate" } );
 ```
 
 ---
@@ -220,13 +220,13 @@ var entries = client.Entries.List("film", new PageOptions(3, 10),
 
 ## List by content type with paging and ordering asynchronously
 
-Lists entries for a specific content type, with paging and field sort configuration.
+Lists entries for a specific content type, with paging and field order configuration.
 
 ### Syntax
 
 
 ```cs
-public Task<PagedList<Entry>> ListAsync(string contentTypeId, PageOptions pageOptions, SortFields sortFields)
+public async Task<PagedList<Entry>> ListAsync(string contentTypeId, PageOptions pageOptions, IList<string> order)
 {
 }
 ```
@@ -241,13 +241,13 @@ public Task<PagedList<Entry>> ListAsync(string contentTypeId, PageOptions pageOp
 > Type: PageOptions  
 > Paging options for specifying the page index and size.
 
-*sortFields*
-> Type: SortFields  
+*order*
+> Type: `IList<string>`  
 > Options for specifying the result ordering.
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -255,9 +255,9 @@ The default for the PageOptions is PageSize: 20, PageIndex: 0.
 // Create a client
 var client = ContensisClient.Create();
 
-// Get all entries with the default paging options
-var entries = await client.Entries.ListAsync("film", new PageOptions(3, 10), 
-    new SortFields { new SortField("title", SortField.FieldSortDirection.Descending) });
+// Get all entries based on the Movie content type with the default paging options
+var entries = await client.Entries.ListAsync("movie", new PageOptions(3, 10), 
+    new [] { "title", "-releaseDate" } );
 ```
 
 ---
@@ -284,7 +284,7 @@ public PagedList<Entry> List(EntryListOptions listOptions)
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -294,7 +294,7 @@ var client = ContensisClient.Create();
 
 // Use the list options to filter the entry listing
 var entries = client.Entries.List(new EntryListOptions{
-    ContentTypeId = "film",
+    ContentTypeId = "movie",
     PageOptions = new PageOptions(3, 10),
     Order = new[] { "title", "-sys.version.created" },
     Language = "fr-fr",
@@ -326,7 +326,7 @@ public Task<PagedList<Entry>> ListAsync(EntryListOptions listOptions)
 
 ### Remarks
 
-The default for the PageOptions is PageSize: 20, PageIndex: 0.
+The default for the PageOptions is PageSize: 25, PageIndex: 0.
 
 ### Examples
 
@@ -336,12 +336,12 @@ var client = ContensisClient.Create();
 
 // Use the list options to filter the entry data
 var entries = await client.Entries.ListAsync(new EntryListOptions{
-    ContentTypeId = "film",
+    ContentTypeId = "movie",
     PageOptions = new PageOptions(3, 10),
     Order = new[] { "title", "-sys.version.created" },
     Language = "fr-fr",
     LinkDepth = 5,
-    Fields = new { "title", "description", "releaseDate", "coverImage" }
+    Fields = new [] { "title", "description", "releaseDate", "coverImage" }
 });
 ```
 ---
