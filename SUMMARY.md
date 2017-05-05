@@ -17,6 +17,7 @@
 * [Errors](/key-concepts/errors.md)
 * [Linked content](/key-concepts/linked-content.md)
 * [Localization](/key-concepts/localization.md)
+* [Typed models](/key-concepts/typed-models.md)
 
 ## Model
 
