@@ -14,9 +14,11 @@
 * [Listing entries](/key-concepts/entries-list.md)
 * [Data types](/key-concepts/data-types.md)
 * [Data format](/key-concepts/data-format.md)
+* [Taxonomy](/key-concepts/taxonomy-fields.md)
 * [Errors](/key-concepts/errors.md)
 * [Linked content](/key-concepts/linked-content.md)
 * [Localization](/key-concepts/localization.md)
+* [Taxonomy](/key-concepts/taxonomy.md)
 * [Typed models](/key-concepts/typed-models.md)
 
 ## Model
@@ -37,6 +39,7 @@
 * [Quote](/model/quote.md)
 * [PagedList](/model/pagedlist.md)
 * [PageOptions](/model/pageoptions.md)
+* [TaxonomyNode](/model/taxonomynode.md)
 
 ## Search
 
