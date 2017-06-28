@@ -25,3 +25,5 @@ These are the standard properties that all entries have. An entry can have multi
 | [Get(string fieldName)](./entry-methods.html#get) | dynamic | Gets a field item by name and returns a dynamic object |
 | [Get&lt;Type&gt;(string fieldName)](./entry-methods.html#gett) | &lt;Type&gt; | Gets a field item by name and attempts to cast to the specified generic type |
 | [HasValue(string fieldName)](./entry-methods.html#hasvalue) | bool | A helper function to determine whether a field exists and has a value |
+
+
