@@ -177,22 +177,6 @@ public class Movie: EntryModel
 }
 ```
 
-### Resolving an Image
-
-An Image has an Asset property that can be resolved in the same way as a Entry link. Resolving an Image is done by specifying Image as the generic parameter in the `Resolve<T>` method.
-
-```cs
-public class Movie: EntryModel
-{
-    // Other properties
-    ...
-
-    //
-    public Image CoverImage => Resolve<Image>("coverImage");
-}
-```
-
-
 ### Entries can still be returned
 
 Entries can still be used within typed models and can be useful when referencing assets. Using the resolve methods ensures that auto-resolving occurs when accessing the linked entry.
