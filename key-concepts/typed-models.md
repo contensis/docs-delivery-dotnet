@@ -177,6 +177,36 @@ public class Movie: EntryModel
 }
 ```
 
+### Resolving an Image
+
+Resolving an Image uses the same approach as resolving entries.
+
+```cs
+public class Movie: EntryModel
+{
+    // Other properties
+    ...
+
+    //
+    public Image CoverImage => Resolve<Image>("coverImage");
+}
+```
+
+### Resolving a list of Images
+
+Resolving a list of Image uses the same approach as resolving lists of entries.
+
+```cs
+public class Movie: EntryModel
+{
+    // Other properties
+    ...
+
+    //
+    public List<Image> FeatureImages => Resolve<Image>("featureImages");
+}
+```
+
 
 ### Entries can still be returned
 
@@ -188,8 +218,8 @@ public class Movie: EntryModel
     // Other properties
     ...
 
-    // Return the asset as the built-in entry type
-    public Entry CoverImage => Resolve<Entry>("coverImage");
+    // Return the producer as the built-in entry type
+    public Entry Producer => Resolve<Entry>("producer");
 }
 ```
 
