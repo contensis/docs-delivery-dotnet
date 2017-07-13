@@ -158,13 +158,10 @@
         }
 
         if (window.location.pathname.indexOf(storedVersion) < 0) {
-            console.log("navigate");
-            navigateToVersion(storedVersion);
+            console.log("Should navigate to " + storedVersion);
+            //navigateToVersion(storedVersion);
         }
-
-        console.log("duh");
     };
-
 
 
     var init = function() {
