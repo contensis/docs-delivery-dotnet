@@ -131,7 +131,7 @@
     };
 
     var setCookie = function setCookie(cname, cvalue) {
-        document.cookie = cname + "=" + cvalue;
+        document.cookie = cname + "=" + cvalue + ";path=/";
     };
 
     var getCookie = function getCookie(cname) {
