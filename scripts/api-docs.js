@@ -1,18 +1,30 @@
 (function(){
     var urlRoot = "/contensis/api/delivery/dotnet/"
+    var version = 'beta'
+
     var cookieName = 'api_docs_version';
     var versions = [];
     var select;
     var config;
 
     var getConfig = function() {
-        return fetch(urlRoot + 'config.json').then(function(response) {
+        var configUrl;
+        if (window.location.pathname.indexOf('localhost' >= 0)) {
+            configUrl = "/config.json";
+        } else {
+            configUrl = urlRoot + 'config.json';
+        }
+
+        return fetch(configUrl).then(function(response) {
             return response.json();
         });
     };
 
     var renderOptions = function() {
         var selectedVersion = getCookie(cookieName);
+        if (selectedVersion === '') {
+            selectedVersion = version;
+        }
 
         for(var i = select.options.length - 1 ; i >= 0 ; i--)
         {
@@ -20,8 +32,8 @@
         }
 
         // Add defaults
-        addSelectOption('Latest (' + config.version + ')', config.version, selectedVersion === config.version);
-        addSelectOption('beta', 'Beta', selectedVersion === 'Beta');
+        addSelectOption('Latest (' + config.latestVersion + ')', config.latestVersion, selectedVersion === config.latestVersion);
+        addSelectOption('Beta', 'beta', selectedVersion === 'beta');
         
         var ordered = versions.sort(function(a, b){return b-a});
         for (var index = 0; index < ordered.length; index++) {
@@ -49,9 +61,11 @@
     var discoverVersions = function(config) {
         config.previousVersions.forEach(function(version) {
             checkVersionExists(version).then(function(resp) {
-                addVersion(version);
+                if (resp) {
+                    addVersion(version);
+                }
             }).catch(function() {
-                addVersion(version);
+                console.log('Version does not exist: ' + version);
             });
         }, this);
     };
@@ -61,15 +75,16 @@
             method: 'HEAD',
             mode: 'no-cors'
         }
-        return fetch(getPageUrl(version), options).then(function(response){
+        return fetch(getPageVersionUrl(version), options).then(function(response){
             return response.ok;
         }).catch(function(){
+            console.log('Version does not exist: ' + version);
             return false;
         })
     };
 
-    var getPageUrl = function(version) {
-        return urlRoot + version + window.location.pathname;
+    var getPageVersionUrl = function(version) {
+        return urlRoot + 'v/' + version + window.location.pathname;
     };
 
     var navigateToVersion = function(version) {
@@ -79,7 +94,7 @@
 
         setCookie(cookieName, version);
         console.log(urlRoot);
-        window.location.href = getPageUrl(version);
+        window.location.href = getPageVersionUrl(version);
     };
 
     var onSelectChange = function(e) {
@@ -139,18 +154,13 @@
         console.log("duh");
     };
 
-    var determineUrlRoot = function() {
-        if (window.location.pathname.indexOf('/v/') >= 0){
-            urlRoot += 'v/';
-        }
-        console.log(urlRoot);
-    };
+
 
     var init = function() {
         select = null;
         versions = [];
 
-        determineUrlRoot();
+        //determineUrlRoot();
 
         if (config == null) {
             getConfig().then(function(c){
