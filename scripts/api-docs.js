@@ -1,5 +1,5 @@
 (function(){
-    var urlRoot = "./contensis/api/delivery/dotnet/"
+    var urlRoot = "/contensis/api/delivery/dotnet/"
     var version = 'beta'
 
     var cookieName = 'api_docs_version';
@@ -84,7 +84,18 @@
     };
 
     var getPageVersionUrl = function(version) {
-        return urlRoot + 'v/' + version + window.location.pathname;
+        var url = window.location.pathname.replace(urlRoot, '');
+
+        var parts = url.split('/');
+        if (parts[0] === 'v') {
+            parts.shift();
+            parts.shift();
+            url = parts.join('/');
+        }
+
+        url = urlRoot + 'v/' + version + '/' +  url;
+        console.log(url);
+        return url;
     };
 
     var navigateToVersion = function(version) {
