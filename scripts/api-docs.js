@@ -9,7 +9,7 @@
 
     var getConfig = function() {
         var configUrl;
-        if (window.location.pathname.indexOf('localhost' >= 0)) {
+        if (window.location.pathname.indexOf('localhost') >= 0) {
             configUrl = "/config.json";
         } else {
             configUrl = urlRoot + 'config.json';
