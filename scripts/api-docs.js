@@ -1,5 +1,5 @@
 (function(){
-    var urlRoot = "/contensis/api/delivery/dotnet/"
+    var urlRoot = "./contensis/api/delivery/dotnet/"
     var version = 'beta'
 
     var cookieName = 'api_docs_version';
