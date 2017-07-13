@@ -1,5 +1,5 @@
 (function(){
-    var urlRoot = "/contensis/api/delivery/dotnet/v/"
+    var urlRoot = "/contensis/api/delivery/dotnet/"
     var cookieName = 'api_docs_version';
     var versions = [];
     var select;
@@ -139,9 +139,18 @@
         console.log("duh");
     };
 
+    var determineUrlRoot = function() {
+        if (window.location.pathname.indexOf('/v/') >= 0){
+            urlRoot += 'v/';
+        }
+        console.log(urlRoot);
+    };
+
     var init = function() {
         select = null;
         versions = [];
+
+        determineUrlRoot();
 
         if (config == null) {
             getConfig().then(function(c){
