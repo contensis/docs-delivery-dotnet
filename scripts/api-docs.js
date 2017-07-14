@@ -7,14 +7,7 @@
     var config;
 
     var getConfig = function() {
-        var configUrl;
-        if (window.location.pathname.indexOf('localhost') >= 0) {
-            configUrl = "/config.json";
-        } else {
-            configUrl = urlRoot + 'config.json';
-        }
-
-        return fetch(configUrl).then(function(response) {
+        return fetch("/config.json").then(function(response) {
             return response.json();
         });
     };
