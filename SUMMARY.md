@@ -14,11 +14,11 @@
 * [Listing entries](/key-concepts/entries-list.md)
 * [Data types](/key-concepts/data-types.md)
 * [Data format](/key-concepts/data-format.md)
-* [Taxonomy](/key-concepts/taxonomy-fields.md)
 * [Errors](/key-concepts/errors.md)
 * [Linked content](/key-concepts/linked-content.md)
 * [Localization](/key-concepts/localization.md)
 * [Taxonomy](/key-concepts/taxonomy.md)
+* [Taxonomy fields](/key-concepts/taxonomy-fields.md)
 * [Typed models](/key-concepts/typed-models.md)
 
 ## Model
