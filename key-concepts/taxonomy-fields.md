@@ -1,6 +1,6 @@
 # Taxonomy fields
 
-Fields defined as a taxonomy field (DataType = object, DataFormat = taxonomy) are automatically resolved in the Delivery API and returned as [TaxonomyNode](/model/TaxonomyNode.md) instances. A TaxonomyNode has a name, a path and child nodes.
+Fields defined as a taxonomy field (DataType = String, DataFormat = taxonomy) are automatically resolved in the Delivery API and returned as [TaxonomyNode](/model/TaxonomyNode.md) instances. A TaxonomyNode has a name, a path and child nodes.
 
 The following example shows how a taxonomy node can be retrieved from an [Entry](/model/entry.md).
 
@@ -19,8 +19,10 @@ If a taxonomy node instance has child nodes, then they can be accessed using the
 
 ```cs
 // Accessing the Children property resolves the child nodes
-foreach(var node in genreNode.Children)
+<ul>
+@foreach(var node in genreNode.Children)
 {
-    // 
+   <li>@node.Name</li> 
 }
+</ul>
 ```
