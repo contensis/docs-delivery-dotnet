@@ -1,6 +1,6 @@
 # Typed models
 
-Typed models in the Contensis .NET Delivery API is the concept of handling entry data as strongly-typed objects instead of using general-purpose entry instances. When invoking any of the Get, List or Search operations, a Generic type parameter can be specified to stipulate the type you want the data to be returned as. 
+Typed models in the .NET Delivery API is the concept of handling entry data as strongly-typed objects instead of using general-purpose entry instances. When invoking any of the Get, List or Search operations, a Generic type parameter can be specified to stipulate the type you want the data to be returned as.
 
 The following shows some of the entry method signatures.
 
@@ -17,12 +17,12 @@ PagedList<T> Search<T>(Query query)
 
 Using typed models has the following key benefits.
 
-* The API becomes specific to your domain.
-* Intellisense for the fields is available when developing within Visual Studio.
-* Errors from badly specified fields are caught during development, negating many issues that may only show during runtime.
-* Simplifies development, as once the model is defined then the content type no longer needs to be referred to.
-* Models can be extended with functions and calculated properties, which can then be centralize logic that would otherwise be spread across Razor views.
-* Models can be reshaped to fit the needs of the application.
+- The API becomes specific to your domain.
+- IntelliSense for fields are available when developing within Visual Studio.
+- Errors from badly specified fields are caught during development, preventing many issues that may only show during runtime.
+- Simplifies development, once the model is defined then the content type no longer needs to be referred to.
+- Models can be extended with functions and calculated properties. This logic can be centralized which would otherwise be spread across Razor views.
+- Models can be reshaped to fit the needs of the application.
 
 The defined model type needs to have properties that match the api ids of the fields defined in the content type for the entry. Only a subset of the fields need to be added and the name of the property does not have to be the same casing as the field id.
 
@@ -30,9 +30,9 @@ The defined model type needs to have properties that match the api ids of the fi
 
 There are essentially three locations models can be defined for Contensis websites.
 
-* **Directly within a Razor view** - this is the simplest approach, but does not allow models to be shared across multiple views
-* **App_Code folder** - C# or VB.NET class files can be added to a folder called App_Code in the root of a Contensis project. [Details of App_Code folders can be found here](https://msdn.microsoft.com/en-us/library/t990ks23.aspx#Anchor_1).
-* **Custom dll** - model classes can be created within a .NET assembly and then referenced within the project configuration. This allows models to be shared across projects and even Contensis instances.
+- **Directly within a Razor view** - this is the simplest approach, but does not allow models to be shared across multiple views
+- **App_Code** - C# or VB.NET class files can be added to a folder called App_Code in the root of a Contensis project. [Details of App_Code folders can be found here](https://msdn.microsoft.com/en-us/library/t990ks23.aspx#Anchor_1).
+- **Custom dll** - model classes can be created within a .NET assembly and then referenced within the project configuration. This allows models to be shared across projects and even Contensis instances.
 
 
 
@@ -45,13 +45,13 @@ namespace MovieDb.Models
 {
     public class Movie
     {
-        // Defined as title in the Content type. 
+        // Defined as title in the Content type.
         public string Title { get; set; }
 
-        // Defined as overview in the Content type. 
+        // Defined as overview in the Content type.
         public string Overview { get; set; }
 
-        // Defined as releaseDate in the Content type. 
+        // Defined as releaseDate in the Content type.
         public DateTime ReleaseDate { get; set; }
     }
 }
@@ -79,7 +79,8 @@ var releaseDate = movie.ReleaseDate;
 
 Most content models are composed of content types with relationships to other content types. With Typed Models this can be achieved easily by adding properties on the model class that return a type that represents the linked entry.
 
-For example, a Movie has a director and actors. This can be achieved by creating a Person model class and using it as the return typed for properties on the Movie model class.
+## Example
+A Movie has a director and actors. This can be achieved by creating a Person model class and using it as the return typed for properties on the Movie model class.
 
 ```cs
 namespace MovieDb.Models
@@ -125,7 +126,7 @@ var directorName = movie.Director.Name;
 var actors = movie.Actors.Count;
 ```
 
-   
+
 > **Note**  
 > When getting the entry using a plain class model, a linkDepth value is needed so that the linked entry data is resolved before being returned and will ensure the Director and Actor properties are fully populated. For lazy resolved linked entries and assets a model needs to inherit from the `EntryModel` base class.
 
@@ -134,7 +135,7 @@ var actors = movie.Actors.Count;
 
 ## EntryModel base class
 
-Inheriting a model class from EntryModel gives access to the methods that will auto-resolve typed linked entries, for both individual or lists. This negates the need to have to pass a *linkDepth* parameter to the Get, List or Search methods to resolve the linked entry data.
+Inheriting a model class from EntryModel gives access to the methods that will auto-resolve typed linked entries, for both individual entries or lists. This prevents the need to have to pass a *linkDepth* parameter to the Get, List or Search methods to resolve the linked entry data.
 
 The EntryModel base class has a Sys property pre-defined which contains all the entry system data, such as Id, ProjectId, ContentTypeId, etc.
 
@@ -156,7 +157,7 @@ public class Movie: EntryModel
     // Other properties
     ...
 
-    // 
+    //
     public Person Director => Resolve<Person>("director");
 }
 ```
@@ -176,6 +177,36 @@ public class Movie: EntryModel
 }
 ```
 
+### Resolving an Image
+
+An Image has an Asset property that can be resolved in the same way as a Entry link. Resolving an Image is done by specifying Image as the generic parameter in the `Resolve<T>` method.
+
+```cs
+public class Movie: EntryModel
+{
+    // Other properties
+    ...
+
+    //
+    public Image CoverImage => Resolve<Image>("coverImage");
+}
+```
+
+### Resolving a list of Images
+
+Resolving a list of Image uses the same approach as resolving lists of entries.
+
+```cs
+public class Movie: EntryModel
+{
+    // Other properties
+    ...
+
+    //
+    public List<Image> FeatureImages => Resolve<Image>("featureImages");
+}
+```
+
 
 ### Entries can still be returned
 
@@ -187,8 +218,8 @@ public class Movie: EntryModel
     // Other properties
     ...
 
-    // Return the asset as the built-in entry type
-    public Entry CoverImage => Resolve<Entry>("coverImage");
+    // Return the producer as the built-in entry type
+    public Entry Producer => Resolve<Entry>("producer");
 }
 ```
 

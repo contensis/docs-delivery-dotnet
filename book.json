@@ -2,7 +2,9 @@
     "title": "Contensis .NET Delivery API",
     "links": {
       "sidebar": {
-        "Development Home": "https://zenhub.zengenti.com/Contensis/9/development/Contensis-development.aspx"
+        "Development Home": "#",
+        "HTTP Delivery API": "/contensis/api/delivery/http/",
+        "JavaScript Delivery API": "/contensis/api/delivery/js/"
       }
     },
     "plugins": [
@@ -10,7 +12,8 @@
       "fontsettings",
       "-highlight",
       "prism",
-      "ga"
+      "ga",
+      "scripts"
     ],
     "pluginsConfig": {
       "fontsettings": {
@@ -28,6 +31,13 @@
       },
       "ga": {
         "token": "UA-96163335-1"
+      },
+      "scripts": {
+        "files": [
+          "./scripts/es6-promise.min.js",
+          "./scripts/fetch.min.js",
+          "./scripts/api-docs.js"
+        ]
       }
     }
 }

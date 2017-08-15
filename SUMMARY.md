@@ -17,6 +17,8 @@
 * [Errors](/key-concepts/errors.md)
 * [Linked content](/key-concepts/linked-content.md)
 * [Localization](/key-concepts/localization.md)
+* [Taxonomy](/key-concepts/taxonomy.md)
+* [Taxonomy fields](/key-concepts/taxonomy-fields.md)
 * [Typed models](/key-concepts/typed-models.md)
 
 ## Model
@@ -37,6 +39,7 @@
 * [Quote](/model/quote.md)
 * [PagedList](/model/pagedlist.md)
 * [PageOptions](/model/pageoptions.md)
+* [TaxonomyNode](/model/taxonomynode.md)
 
 ## Search
 

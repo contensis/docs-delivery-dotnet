@@ -100,3 +100,10 @@ background-color: #e27a7a;
 .label--patch {
 background-color: #e09d43;
 }
+
+.version-select {
+  height: 50px;
+  position: relative;
+  font-size: 14px;
+  padding: 10px;
+}
