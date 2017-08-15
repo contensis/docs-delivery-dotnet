@@ -42,4 +42,4 @@
 
 * [Search basics](/search/entry-search.md)
 * [Query operators](/search/query-operators.md)
-* [Query boosting](/search/query-boosting.md)
+* [Query weighting](/search/query-boosting.md)

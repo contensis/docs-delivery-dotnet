@@ -1,8 +1,7 @@
-# Query Boosting
+# Query Weighting
 
 Search queries can be focused by weighting free-text queries and structuring queries so as to provide convergence on certain fields and/or terms.
 
-## Query Weighting
 FreeText queries can be weighted in order to provide focus on certain terms. This is achieved by modifying the relevance of each search result by the provided weighting - the higher the relevance of any given result, the higher it will appear in the list.
 
 Weighting can be used to provide more relevance to certain fields for your results - for example, if searching across movies, you may feel any results in the ‘title’ field are more relevant than the ‘tagline’ or ‘overview’ fields. This is easily achieved by simply weighting the relevant free-text operator in the query, as will be shown below.
