@@ -17,6 +17,7 @@ Weighting can be used to provide more relevance to specific fields with a query.
 
 For example, if searching across movie ‘title’, ‘tagline’ and ‘overview’ for the term ‘earth’, with an emphasis on the ‘title’ field, you could use the following query:
 
+
 ```cs
 var query = new Query
             (
@@ -35,6 +36,7 @@ var query = new Query
 ```
 
 As can be seen from the following results, this lends a higher relevance to titles with a higher ratio of the term ‘earth’:  
+
 
 ![Weighting 'title' query](/images/field-search-title-weighted.png)
 
@@ -61,9 +63,11 @@ var query = new Query
 
 Yields the following results:  
 
+
 ![Weighting 'tagline' query](/images/field-search-tagline-weighted.png)
 
 Finally, weighting the ‘overview’ field:
+
 ```cs
 var query = new Query
             (
@@ -82,6 +86,7 @@ var query = new Query
 ```
 Results in: 
 
+
 ![Weighting 'overview' query](/images/field-search-overview-weighted.png)
 
 As can be seen, weighting can help in providing relevance to your results, but is not a guarantee of specific ordering.
@@ -91,6 +96,7 @@ As can be seen, weighting can help in providing relevance to your results, but i
 Weighting can be used to provide focus on terms in free-text searches.
 
 For example, if searching across movie overviews for ‘thrillers’ which are ‘exciting’ and/or ‘tense’, you might use the following query:
+
 ```cs
 var query = new Query
             (
@@ -109,9 +115,12 @@ var query = new Query
 ```
 
 However, as can be seen from the results, this also retrieves movies which are not thrillers, but are apparently exciting and/or tense:  
+
+
 ![Non-weighted terms query](/images/term-search-not-weighted.png)
 
 We can favour ‘thrillers’ by adding weighting to the query as follows:
+
 ```cs
 var query = new Query
             (
@@ -130,9 +139,12 @@ var query = new Query
 ```
 
 The query will now favour ‘thrillers’ over other movie results as can be seen in the following:  
+
+
 !['Thriller' weighted terms query](/images/term-search-thriller-weighted.png)
 
 However, ‘exciting’ and ‘tense’ are still not favoured over other results. By also weighting these queries, we can push them to the top:
+
 ```cs
             var query = new Query
             (
@@ -151,10 +163,13 @@ However, ‘exciting’ and ‘tense’ are still not favoured over other result
 
 ```
 As can be seen from the results:  
+
+
 ![All weighted terms query](/images/term-search-all-weighted.png)
 
 
 Please note the different weights for ‘thriller’, ‘exciting’ and ‘tense’: this difference is required in order to prevent the weightings negating each other. For example:  
+
 ```cs
             var query = new Query
             (
@@ -173,6 +188,8 @@ Please note the different weights for ‘thriller’, ‘exciting’ and ‘tens
 ```
 
 As can be seen from the results, weighting each of these terms identically negates the effect, producing the same result as the non-weighted query:  
+
+
 ![All equally weighted terms query](/images/term-search-all-equally-weighted.png)
 
 
@@ -182,6 +199,7 @@ As well as weighting, query structure can be used to provide focus in searches. 
 ### Providing more relevance for specific fields
 
 Query structure can also be used to provide more relevance to specific fields. For example, structuring a query as follows gives a relevance boost to any documents matching the query for the ‘title’ field:  
+
 ```cs
 var query = new Query
             (
@@ -203,12 +221,14 @@ var query = new Query
 ```
 This yields the following results:
 
+
 ![Structured field query](/images/field-search-title-structured-weighted.png)
 
 However, this does not produce the same results as those of the weighted example.
 
 ### Providing more relevance to terms within a field  
 As in the weighted examples, the focus of the query should be ‘thrillers’, with ‘tense’ and ‘exciting’ being adjectives which should be favoured. This can be achieved by restructuring the original query as follows:  
+
 ```cs
             var query = new Query
             (
@@ -230,6 +250,8 @@ As in the weighted examples, the focus of the query should be ‘thrillers’, w
 ```
 
 As you can see from the results, this pushes the exciting and tense thrillers to the top of the results, while also removing any movies which are not also thrillers:  
+
+
 ![Structured term query](/images/term-search-structured-weighted.png)
 
 > **NOTE: Other Terms**  
