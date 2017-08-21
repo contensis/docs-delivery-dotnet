@@ -35,6 +35,7 @@ var query = new Query
 ```
 
 As can be seen from the following results, this lends a higher relevance to titles with a higher ratio of the term ‘earth’:  
+
 ![Weighting 'title' query](/images/field-search-title-weighted.png)
 
 However, what can also be seen is the fact that ‘title’ fields with higher ratios of the term do not guarantee higher relevance. This is due to the cumulative effect of scoring across terms and operators, meaning the total relevance of the result can also be affected by the relevance of the other fields which have been searched across.
@@ -59,6 +60,7 @@ var query = new Query
 ```
 
 Yields the following results:  
+
 ![Weighting 'tagline' query](/images/field-search-tagline-weighted.png)
 
 Finally, weighting the ‘overview’ field:
@@ -78,7 +80,8 @@ var query = new Query
                 )
             );
 ```
-Results in:  
+Results in: 
+
 ![Weighting 'overview' query](/images/field-search-overview-weighted.png)
 
 As can be seen, weighting can help in providing relevance to your results, but is not a guarantee of specific ordering.
@@ -199,6 +202,7 @@ var query = new Query
             );
 ```
 This yields the following results:
+
 ![Structured field query](/images/field-search-title-structured-weighted.png)
 
 However, this does not produce the same results as those of the weighted example.
