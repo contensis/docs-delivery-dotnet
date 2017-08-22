@@ -7,6 +7,7 @@ The TaxonomyNode type represents a node in the taxonomy tree defined in Contensi
 
 | Name | Type | Description |
 | :--- | :--- | :---------- |
+| Key | string | The key for the taxonomy node |
 | Name | string | The name of the taxonomy node |
 | Path | string | The full path of the taxonomy node, including the current node name |
 | Children | IReadOnlyList&lt;TaxonomyNode&gt; | Child taxonomy nodes |
