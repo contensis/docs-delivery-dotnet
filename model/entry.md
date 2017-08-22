@@ -10,7 +10,7 @@ These are the standard properties that all entries have. An entry can have multi
 
 | Name | Type | Description |
 | :------- | :--- | :---------- |
-| Id | int | The entry identifier |
+| Id | Guid | The entry identifier |
 | ContentTypeId | string  | The API identifier of the content type that the entry is based on |
 | ProjectId | string | The API identifer of the project the entry belongs to |
 | DataFormat | string | Either 'entry' or 'asset' |
