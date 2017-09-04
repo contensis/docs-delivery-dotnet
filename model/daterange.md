@@ -25,11 +25,14 @@ The *From* value cannot be a later date than the *To* value.
 @using Zengenti.Contensis.Delivery;
 
 @{
-    // Retrieve a film by it's ID.
-    var film = client.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
+    // Create an API client
+    var client = ContensisClient.Create();
+
+    // Retrieve a movie by it's ID.
+    var movie = client.Entries.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
 
     // Get the field value as a DateRange instance.
-    var filmingPeriod = film.Get<DateRange>("filmingPeriod");
+    var filmingPeriod = movie.Get<DateRange>("filmingPeriod");
 }
 
 <div class="start">@filmingPeriod.From</div>

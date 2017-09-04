@@ -23,8 +23,11 @@ Unlike entry links, an asset link is always resolved so that the full asset deta
 @using Zengenti.Contensis.Delivery;
 
 @{
-    // Retrieve a film by it's ID.
-    var movie = client.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
+    // Create an API client
+    var client = ContensisClient.Create();
+    
+    // Retrieve a movie by it's ID.
+    var movie = client.Entries.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
 
     // Get the field value as an Image instance.
     var coverImage = movie.Get<Image>("posterImage");

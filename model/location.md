@@ -8,7 +8,7 @@ The Location class represents a geographic coordinate that specifies the positio
 | Name | Type | Description |
 | :--- | :--- | :---------- |
 | Lat | double | The north-south position |
-| Lng | double | The east-west position |
+| Lon | double | The east-west position |
 
 ## Example
 
@@ -18,11 +18,14 @@ The Location class represents a geographic coordinate that specifies the positio
 @using Zengenti.Contensis.Delivery;
 
 @{
+    // Create an API client
+    var client = ContensisClient.Create();
+
     // Retrieve a film by it's ID.
-    var film = client.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
+    var movie = client.Entries.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
 
     // Get the field value as a Location instance.
-    var filmingLocation = film.Get<Location>("filmingLocation");
+    var filmingLocation = movie.Get<Location>("filmingLocation");
 
     // Combine lat/lng into a string.
     var latLng = $"{filmingLocation.Lat},{filmingLocation.Lng}";

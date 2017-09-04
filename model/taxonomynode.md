@@ -20,11 +20,14 @@ The TaxonomyNode type represents a node in the taxonomy tree defined in Contensi
 @using Zengenti.Contensis.Delivery;
 
 @{
+    // Create an API client
+    var client = ContensisClient.Create();
+
     // Retrieve a movie by it's ID.
-    var movie = client.Get("3bb72e32-1fc7-4289-bf65-60a5b8ce1f78");
+    var movie = client.Entries.Get("3bb72e32-1fc7-4289-bf65-60a5b8ce1f78");
 
     // Get the field value as a TaxonomyNode instance.
-    var movieGenre = film.Get<TaxonomyNode>("genre");
+    var movieGenre = movie.Get<TaxonomyNode>("genre");
 }
 
 <div>
