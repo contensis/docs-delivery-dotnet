@@ -19,7 +19,7 @@ The Location class represents a geographic coordinate that specifies the positio
 
 @{
     // Retrieve a film by it's ID.
-    var film = client.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
+    var film = client.Entries.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
 
     // Get the field value as a Location instance.
     var filmingLocation = film.Get<Location>("filmingLocation");
