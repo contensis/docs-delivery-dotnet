@@ -26,7 +26,7 @@ The *From* value cannot be a later date than the *To* value.
 
 @{
     // Retrieve a film by it's ID.
-    var film = client.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
+    var film = client.Entries.Get("0aabad4e-a083-4a88-bd75-b2674e2f8298");
 
     // Get the field value as a DateRange instance.
     var filmingPeriod = film.Get<DateRange>("filmingPeriod");
