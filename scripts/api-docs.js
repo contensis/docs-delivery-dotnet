@@ -1,6 +1,6 @@
 (function(){
     var urlRoot = "/contensis/api/delivery/dotnet/"
-    var version = 'beta'
+    var version = '10.0'
 
     var renderVersionSelectorScript = function() {
         var element = document.createElement("script");
