@@ -20,6 +20,7 @@
 * [Taxonomy](/key-concepts/taxonomy.md)
 * [Taxonomy fields](/key-concepts/taxonomy-fields.md)
 * [Typed models](/key-concepts/typed-models.md)
+* [Components](/key-concepts/components.md)
 
 ## Model
 
