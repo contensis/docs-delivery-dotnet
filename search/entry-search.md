@@ -9,26 +9,42 @@ This example demonstrates a simple search with default ordering and paging optio
 ### Synchronous
 
 ```cs
-var query = new Query(
-    Op.Contains("title", "Batman"),
-    Op.GreaterThan("runtime", 200)
-);
+@using Zengenti.Contensis.Delivery
+@using Zengenti.Data
+@using Zengenti.Search
 
-// Execute the search returning entries
-PagedList<Entry> = client.Entries.Search(query);
+@{
+    var client = ContensisClient.Create();
 
-// Execute the search returning typed models
-PagedList<Movie> result = client.Entries.Search<Movie>(query);
+    var query = new Query(
+        Op.Contains("title", "Batman"),
+        Op.GreaterThan("runtime", 200)
+    );
+
+    // Execute the search returning entries
+    PagedList<Entry> entriesResult = client.Entries.Search(query);
+
+    // Execute the search returning typed models
+    PagedList<Movie> moviesResult = client.Entries.Search<Movie>(query);
+}
 ```
 
 ### Asynchronous
 
 ```cs
-// Execute the search asynchronously  returning entries
-PagedList<Entry> results = await client.Entries.SearchAsync(query);
+@using Zengenti.Contensis.Delivery
+@using Zengenti.Data
+@using Zengenti.Search
 
-// Execute the search returning typed models
-PagedList<Movie> result = await client.Entries.SearchAsync<Movie>(query);
+@{
+    var client = ContensisClient.Create();
+
+    // Execute the search asynchronously  returning entries
+    PagedList<Entry> entriesResult = await client.Entries.SearchAsync(query);
+
+    // Execute the search returning typed models
+    PagedList<Movie> moviesResult = await client.Entries.SearchAsync<Movie>(query);
+}
 ```
 
 
@@ -79,17 +95,15 @@ Paging allows the number of results to be restricted to a defined count so that 
 
 
 ```cs
-{
-    // Create a query
-    var query = new Query(
-        Op.EqualTo("contentTypeId", "film"));
+// Create a query
+var query = new Query(
+    Op.EqualTo("contentTypeId", "film"));
 
-    // Set the paging options
-    query.PageSize = 50;
+// Set the paging options
+query.PageSize = 50;
 
-    // Get the 2nd result set
-    query.PageIndex = 1;
-}
+// Get the 2nd result set
+query.PageIndex = 1;
 ```
 
 
@@ -108,15 +122,23 @@ Fields defined in the content type for the entry can be accessed by their API id
 The example below combines the ordering and paging concepts:
 
 ```cs
-var query = new Query(
-    Op.Contains("title", "Batman"),
-    Op.GreaterThan("runtime", 200)
-);
+@using Zengenti.Contensis.Delivery
+@using Zengenti.Data
+@using Zengenti.Search
 
-query.OrderBy.Add("-releaseDate")
-query.PageIndex = 1;
-query.PageSize = 50;
+@{
+    var client = ContensisClient.Create();
 
-// Execute the search
-var results = client.Entries.Search(query);
+    var query = new Query(
+        Op.Contains("title", "Batman"),
+        Op.GreaterThan("runtime", 200)
+    );
+
+    query.OrderBy.Add("-releaseDate")
+    query.PageIndex = 1;
+    query.PageSize = 50;
+
+    // Execute the search
+    var results = client.Entries.Search(query);
+}
 ```
