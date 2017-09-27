@@ -47,11 +47,9 @@ This example demonstrates a simple search with default ordering and paging optio
 }
 ```
 
-
 ## Sub-queries
 
-A sub-query is a query within another query that is used as a condition to further restrict the results. Effectively they are defined by an explicit nesting of [logical operators](/common/query-api/query-operators.md#logical-operators).
-
+A sub-query is a query within another query that is used as a condition to further restrict the results. Effectively they are defined by an explicit nesting of [logical operators](query-operators.md#logical-operators).
 
 This example demonstrates a simple search with a sub-query:
 
@@ -93,7 +91,6 @@ query.OrderBy.Add("title", "-releaseDate")
 
 Paging allows the number of results to be restricted to a defined count so that the results are easier to handle and ensures a response is returned quickly. The page number can also be specified to allow which set of results is to be returned.
 
-
 ```cs
 // Create a query
 var query = new Query(
@@ -106,15 +103,16 @@ query.PageSize = 50;
 query.PageIndex = 1;
 ```
 
-
 ## Specifying fields
 
 ### System fields
+
 System fields such as id, contentTypeId, projectId, versionNo etc. are under the *sys* object and can be accessed using a dot notation, e.g. sys.id, sys.contentTypeId, sys.projectId, sys.version.versionNo.
 
 The *entryTitle* field is a dynamic value, determined by the *EntryTitleField* value in the content type.
 
 ### Data fields
+
 Fields defined in the content type for the entry can be accessed by their API id.
 
 ## Complete example
