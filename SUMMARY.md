@@ -4,7 +4,9 @@
 * [Getting started](/getting-started.md)
 
 ## Security
+
 * [Authentication](/security/authentication.md)
+
 <!--* [Scopes](/security/scopes.md)-->
 
 ## Key concepts
@@ -24,12 +26,14 @@
 * [Project](/model/project.md)
 * [ContentType](/model/contenttype.md)
 * [Entry](/model/entry.md)
-    * [Entry methods](/model/entry-methods.md)
+  * [Entry methods](/model/entry-methods.md)
 * [Asset](/model/asset.md)
 * [VersionInfo](/model/versioninfo.md)
 * [Metadata](/model/metadata.md)
 * [ContensisClientConfiguration](/model/contensisclientconfiguration.md)
+
 ---
+
 * [ComposedField](/model/composed.md)
 * [DateRange](/model/daterange.md)
 * [Image](/model/image.md)
