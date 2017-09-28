@@ -18,15 +18,14 @@ When a linked entry is accessed then the following rules apply:
 
 - If a language **has** been specified in the link, then the specific language variation will be returned.
 - If a language **has** been specified in the link, but the specific language variation does not exist, then null will be returned or will not be included in the array.
-- If a language **has not** been specified, then the *defaultLanguage* value defined in the [content type](/model/content-type.md) will be used to select the appropriate entry variation to return.
+- If a language **has not** been specified, then the *defaultLanguage* value defined in the [content type](/model/contenttype.md) will be used to select the appropriate entry variation to return.
 - If a language **has not** been specified and there is no default variation, then null will be returned.
-
 
 ### Examples
 
 The following examples demonstrate how entries can be accessed. Accessing the entries will auto-resolve them if they are unresolved.
 
-##### Get a single linked entry or asset
+#### Get a single linked entry or asset
 
 ```cs
 @using Zengenti.Contensis.Delivery;
@@ -46,7 +45,7 @@ The following examples demonstrate how entries can be accessed. Accessing the en
 }
 ```
 
-##### Get a list of linked entries or assets
+#### Get a list of linked entries or assets
 
 ```cs
 @using Zengenti.Contensis.Delivery;
