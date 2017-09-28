@@ -1,6 +1,6 @@
 # Content type
 
-A content type resource can be retrieved from the Delivery API to understand the schema of an [Entry](/key-concepts/entry.md). Entries are constructed and validated using the information defined in the fields collection.
+A content type resource can be retrieved from the Delivery API to understand the schema of an [Entry](/model/entry.md). Entries are constructed and validated using the information defined in the fields collection.
 
 | Name | Type | Description |
 | :--- | :--- | :---------- |
@@ -28,7 +28,7 @@ The field object is the definition of a field within an entry. The field also co
 | Name | [LocalizedValue](#localizedvalue) | A friendly name for the field |
 | Description | [LocalizedValue](#localizedvalue) | The description for the field's purpose |
 | DataType | [DataType](/key-concepts/data-types.md) | The field data type |
-| DataFormat | string | The field [DataFormat](./key-concepts/data-formats.md) |
+| DataFormat | string | The field [DataFormat](/key-concepts/data-format.md) |
 | Default | [LocalizedValue](#localizedvalue) | The default value for the field if no value is provided by an editor |
 
 <!--- | Validations | `object` | The validations that will be performed on the field when the entry is either created or updated |
