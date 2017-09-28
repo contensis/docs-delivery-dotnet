@@ -11,7 +11,6 @@ Requesting an individual entry can be achieved by using one of the `Get` method 
 - [GetAsync(string id, string id, int linkDepth)](#get-by-string-id-async)
 - [GetAsync&lt;T&gt;(string id, string id, int linkDepth)](#get-typed-model-by-string-id-async)
 
-
 ## Get by Guid id
 
 Gets an entry by its `Guid` identifier.
@@ -27,15 +26,15 @@ public Entry Get(Guid id, string language = null, int linkDepth = 0)
 ### Parameters
 
 *id*
-> Type: `Guid`  
+> Type: `Guid`
 > The id of the entry.
 
 *language*
-> Type: `string`  
+> Type: `string`
 > The specified language variation for the entry. If no value is provided then the project default language is used.
 
 *linkDepth*
-> Type: `int`  
+> Type: `int`
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 ### Remarks
@@ -72,15 +71,15 @@ public T Get<T>(Guid id, string language = null, int linkDepth = 0) where T: cla
 > The model class, either a plain class or inheriting from EntryModel.
 
 *id*
-> Type: `Guid`  
+> Type: `Guid`
 > The id of the entry.
 
 *language*
-> Type: `string`  
+> Type: `string`
 > The specified language variation for the entry. If no value is provided then the project default language is used.
 
 *linkDepth*
-> Type: `int`  
+> Type: `int`
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 ### Remarks
@@ -97,6 +96,7 @@ public class Movie
     public DateTime DateOfRelease { get; set; }
 }
 ```
+
 ```cs
 // Create a client
 var client = ContensisClient.Create();
@@ -122,15 +122,15 @@ public Entry Get(string id, string languageCode = null, int linkDepth = 0)
 ### Parameters
 
 *id*
-> Type: `string`  
+> Type: `string`
 > The id of the entry.
 
 *language*
-> Type: `string`  
+> Type: `string`
 > The specified language variation for the entry. If no value is provided then the project default language is used.
 
 *linkDepth*
-> Type: `int`  
+> Type: `int`
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 ### Remarks
@@ -148,10 +148,6 @@ Entry movie = client.Entries.Get("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr"
 ```
 
 ---
-
-
-
-
 
 ## Get typed model by string id
 
@@ -322,15 +318,15 @@ public async Task<Entry> GetAsync(string id, string language = null, int linkDep
 ### Parameters
 
 *id*
-> Type: `string`  
+> Type: `string`
 > The id of the entry.
 
 *language*
-> Type: `string`  
+> Type: `string`
 > The specified language variation for the entry. If no value is provided then the project default language is used.
 
 *linkDepth*
-> Type: `int`  
+> Type: `int`
 > The depth at which to resolve the full entry data for a linked entry. The max depth that can be specified is 10 - larger values will be handled as being 10. By default, no entry data is resolved.
 
 ### Remarks
@@ -346,9 +342,8 @@ var client = ContensisClient.Create();
 // Get the french variation of the movie entry and resolve links to a depth of 3
 Entry movie = await client.Entries.GetAsync("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr", 3);
 ```
+
 ---
-
-
 
 ## Get typed model by string id async
 
@@ -368,15 +363,15 @@ public async Task<T> GetAsync<T>(string id, string language = null, int linkDept
 > The model class, either a plain class or inheriting from EntryModel.
 
 *id*
-> Type: `string`  
+> Type: `string`
 > The id of the entry.
 
 *language*
-> Type: `string`  
+> Type: `string`
 > The specified language variation for the entry. If no value is provided then the project default language is used.
 
 *linkDepth*
-> Type: `int`  
+> Type: `int`
 > The depth at which to resolve the full entry data for a linked entry. The max depth that can be specified is 10 - larger values will be handled as being 10. By default, no entry data is resolved.
 
 ### Remarks
@@ -393,6 +388,7 @@ public class Movie
     public DateTime DateOfRelease { get; set; }
 }
 ```
+
 ```cs
 // Create a client
 var client = ContensisClient.Create();
