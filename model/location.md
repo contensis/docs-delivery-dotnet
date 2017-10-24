@@ -28,7 +28,7 @@ The Location class represents a geographic coordinate that specifies the positio
     var filmingLocation = movie.Get<Location>("filmingLocation");
 
     // Combine lat/lng into a string.
-    var latLng = $"{filmingLocation.Lat},{filmingLocation.Lng}";
+    var latLng = $"{filmingLocation.Lat},{filmingLocation.Lon}";
 
     // Use Google map API to generate a map image.
     var imgUrl = "https://maps.googleapis.com/maps/api/staticmap?center="+latLng+"&zoom=14&size=400x300&sensor=false";
