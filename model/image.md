@@ -1,4 +1,4 @@
-# Images
+# Image
 
 The Image type represents a link to an image with an associated caption, if required.
 
@@ -31,10 +31,14 @@ Unlike entry links, an asset link is always resolved so that the full asset deta
 
     // Get the field value as an Image instance.
     var coverImage = movie.Get<Image>("posterImage");
+
+    // Get properties of the Image instance.
+    var imgWidth = coverImage.Asset.Properties["width"];
+    var imgHeight = coverImage.Asset.Properties["height"];
 }
 
 <figure>
-  <img src="@coverImage.Asset.Uri" alt="@coverImage.Asset.Get("altText")" width="304" height="228">
+  <img src="@coverImage.Asset.Uri" alt="@coverImage.Asset.Get("altText")" width="@imgWidth" height="@imgHeight">
   <figcaption>@coverImage.Caption</figcaption>
 </figure>
 
