@@ -11,13 +11,15 @@ When a component is accessed that contains either Entry, Asset or Image links, t
 Consider the following user-defined type that matches a component:
 
 ```cs
-public class MovieRole
+using Zengenti.Contensis.Delivery;
+
+public class MovieRole: ComponentModel
 {
     public string RoleName { get; set; }
 
     public string Description { get; set; }
 
-    public Link Person { get; set; }
+    public Entry Person => Resolve<Entry>("person");
 }
 ```
 
@@ -30,6 +32,7 @@ MovieRole directorRole = movieEntry.Get<MovieRole>("director");
 // The Person entry is fully resolved
 Entry director = directorRole.Person;
 ```
+
 ```cs
 // Alternatively return a dynamic object
 dynamic directorRole = movieEntry.Get("director");
@@ -51,3 +54,5 @@ foreach(MovieRole role in actorRoles)
     ...
 }
 ```
+
+More information around the use of ComponentModel [can be found on the TypedModel page](/key-concepts/typed-models.md#entrymodel--componentmodel-base-classes).
