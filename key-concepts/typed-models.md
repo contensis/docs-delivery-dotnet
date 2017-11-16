@@ -126,14 +126,10 @@ var directorName = movie.Director.Name;
 var actors = movie.Actors.Count;
 ```
 
-
 > **Note**  
 > When getting the entry using a plain class model, a linkDepth value is needed so that the linked entry data is resolved before being returned and will ensure the Director and Actor properties are fully populated. For lazy resolved linked entries and assets a model needs to inherit from the `EntryModel` base class.
 
-
-
-
-## EntryModel base class
+## EntryModel & ComponentModel base classes
 
 Inheriting a model class from EntryModel gives access to the methods that will auto-resolve typed linked entries, for both individual entries or lists. This prevents the need to have to pass a *linkDepth* parameter to the Get, List or Search methods to resolve the linked entry data.
 
@@ -239,4 +235,32 @@ var language = movie.Sys.Language;
 
 // Get the version no.
 var versionNo = movie.Sys.Version.VersionNo;
+```
+
+### Components
+
+Component models can be defined by inheriting from the `ComponentModel` abstract base class. This, like EntryModel, exposes the same methods to resolve entries, assets and images on demand.
+
+```cs
+// Create a ComponentModel based class 
+public class FilmingLocation: ComponentModel
+{
+    // The name of the location
+    public string Name { get; set;}
+
+    // The geographic coordinates
+    public Location Location {get; set;}
+
+    // Resolve the location image on-demand
+    public Image LocationImage => Resolve<Image>("locationImage");
+}
+
+// Get an entry model
+var movie = client.Entries.Get<Movie>("c1f27b57-c750-4feb-bd12-004ee651e796");
+
+// Access the component
+var filmingLocation = movie.Get<FilmingLocation>("filmingLocation");
+
+// The image is resolved when accessed
+Image image = filmingLocation.LocationImage
 ```
