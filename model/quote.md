@@ -23,7 +23,7 @@ The Quote type represents a section of referenced text from an external source.
     // Retrieve a movie by it's ID.
     var movie = client.Entries.Get("3bb72e32-1fc7-4289-bf65-60a5b8ce1f78");
 
-    // Get the field value as a DateRange instance.
+    // Get the field value as a Quote instance.
     var filmQuote = movie.Get<Quote>("memorableQuote");
 }
 
