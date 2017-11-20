@@ -1,0 +1,330 @@
+# API cheat sheet
+
+## Entry data
+
+### Client creation and get an entry
+
+```cs
+@using Zengenti.Contensis.Delivery
+@{
+    // create the client
+    ContensisClient client = ContensisClient.Create();
+
+    // Get an entry
+    var movie = client.Entries.Get("c0798fc6-1bea-4c46-b67a-e367385704fc");
+
+}
+```
+
+### Entry - Standard properties
+
+```cs
+@movie.Id
+@movie.Uri
+@movie.ProjectId
+@movie.ContentTypeId
+@movie.DataFormat
+@movie.Language
+```
+<!--
+| Name | Type | Description | Code example
+| :------- | :--- | :---------- | :--------- |
+| Id | Guid | The entry identifier | @movie.Id |
+| ContentTypeId | string  | The API identifier of the content type that the entry is based on | @movie.ContentTypeId |
+| ProjectId | string | The API identifer of the project the entry belongs to | @movie.ProjectId |
+| DataFormat | string | Either 'entry' or 'asset' | @movie.DataFormat | 
+| Language | string | The language of the entry instance | @movie.Language |
+| Version | [VersionInfo](/model/versioninfo.md) | Version information for the entry | - |
+| Metadata | Metadata | Metadata associated with the entry instance | - |
+| Owner | string | The id of the entry owner | @movie.Owner |
+-->
+### Entry - Version data
+
+```cs
+@movie.Version.CreatedBy
+@movie.Version.Created
+@movie.Version.ModifiedBy
+@movie.Version.Modified
+@movie.Version.PublishedBy
+@movie.Version.Published
+@movie.Version.VersionNo
+```
+<!--
+| Name | Type | Description | Code example
+| :------- | :--- | :---------- | :--------- | 
+| Created | DateTime | The date the entry was created | @movie.Version.Created |
+| CreatedBy | string | The user id of who created the entry | @movie.Version.CreatedBy |
+| Modified | DateTime | The date the entry version was last modified | @movie.Version.Modified |
+| ModifiedBy | string | The user id of who last modified the entry | @movie.Version.ModifiedBy |
+| Published | DateTime | The date the entry version was last published | @movie.Version.Published |
+| PublishedBy | string | The user id of who last published the entry | @movie.Version.PublishedBy |
+| VersionNo | string | The version of the entry | @movie.Version.VersionNo |
+-->
+
+### Entry - Field data
+These are the fields that you can set and name when you build the content type e.g.
+```cs
+movie.Get<string>("title")              // text string
+movie.Get<string>("description")        // text string
+movie.Get<string>("content")            // HTML markup
+movie.Get<Image>("bannerImage")         // image
+movie.Get<Entry>("download")            // linked entry e.g. PDF download
+movie.Get<Int>("revenue")               // number set to integer
+movie.Get<Double>("revenue")            // number set to decimal
+movie.Get<Location>("shootLoc")         // lat/lon location coordinates
+movie.Get<string>("list")               // single list item
+movie.Get<List<string>>("listMulti")    // Multiple choice list 
+movie.Get<TaxonomyNode>("genre")        // single taxonomy
+movie.Get<List<TaxonomyNode>>("genres") // multi choice taxonomy
+movie.Get<DateTime>("releaseDate")      // single date
+movie.Get<DateRange>("filmingPeriod")   // date range
+movie.Get<bool>("showOnHomepage")       // boolean
+```
+
+
+
+### HTML markup
+Wrap in in Html.Raw() to output as HTML
+```cs
+@Html.Raw(@movie.Get("content"))
+```
+
+### Quote
+```cs
+@{
+    // Get the field value as a Quote instance.
+    var filmQuote = movie.Get<Quote>("memorableQuote");
+}
+
+<blockquote cite="@filmQuote.Source">
+    @filmQuote.Text
+</blockquote>
+```
+
+### List
+```cs
+// Single selection list item
+<p>@movie.Get("list")</p>
+
+// Multiple selection list
+@{
+    var multiList = landing.Get<List<string>>("listMulti");
+    if(multiList.Count > 0)
+    {
+        <ul>
+            @foreach(var listItem in multiList){
+                <li>@listItem</li>
+            }
+        </ul>
+    }
+}
+```
+
+### Taxonomy
+```cs
+// Single selection list item
+<p>@movie.Get("genre")</p>
+
+// Multiple selection list
+@{
+    var genres = landing.Get<List<string>>("genres");
+    if(genres.Count > 0)
+    {
+        <ul>
+            @foreach(var item in genres){
+                <li>@item.Name</li>
+            }
+        </ul>
+    }
+}
+```
+### Location
+```cs
+@using Zengenti.Contensis.Delivery;
+
+@{
+    // Get the field value as a Location instance.
+    var filmingLocation = movie.Get<Location>("filmingLocation");
+
+    // Combine lat/lng into a string.
+    var latLng = $"{filmingLocation.Lat},{filmingLocation.Lon}";
+
+    // Use Google map API to generate a map image.
+    var imgUrl = "https://maps.googleapis.com/maps/api/staticmap?center="+latLng+"&zoom=14&size=400x300&sensor=false";
+}
+
+<div id="map">
+    <img src="@imgUrl" />
+</div>
+```
+
+### Get a DateTime field object
+
+```cs
+@{
+    // Get the field value as a DateRange instance.
+    var releaseDate = movie.Get<DateTime>("releaseDate");
+}
+
+<div>@releaseDate</div>
+```
+
+
+### Get a DateRange field object
+
+```cs
+@{
+    // Get the field value as a DateRange instance.
+    var filmingPeriod = movie.Get<DateRange>("filmingPeriod");
+}
+
+<div class="start">@filmingPeriod.From</div>
+
+<div class="end">@filmingPeriod.To</div>
+```
+
+### Boolean
+```cs
+@{
+    var showOnHome = movie.Get<bool>("showOnHomepage");
+    
+    if(showOnHome == true)
+    {
+        <p>Yay! the entry will appear on the homepage!</p>
+    }
+}
+```
+
+## Assets - getting a file (e.g. PDF) from an entry
+PDFs, zip, and other file types in entries are just links to an entry with a type of "asset" - you need to get the asset first, then access it's fields.
+
+
+
+### Get the linked asset
+```cs
+@{
+    // Get the asset instance from the entry  (single)
+    var download = movie.Get<Entry>("download");
+
+    // Get the asset instances from the entry  (multi)
+    List relatedDownloads = movie.Get<List<Entry>>("relatedFiles");
+}
+
+// Example use - single
+<a href="@download.Uri">@download.Get("title") - @download.Properties.FileSize bytes</a>
+
+// Example use - multiple
+<ul>
+    foreach(var item in relatedDownloads) 
+    {
+        <li><a href="@item.Uri">@item.Get("title") - @item.Properties.FileSize bytes</a></li>
+    }
+</ul>
+
+
+```
+
+### Asset - standard properties
+```cs
+@download.Id
+@download.Uri
+@download.ProjectId
+@download.ContentTypeId
+@download.DataFormat
+@download.Language
+```
+
+### Asset - properties
+```cs
+@download.Properties.Filename
+@download.Properties.FileSize
+```
+
+### Asset - Version
+```cs
+@download.Version.CreatedBy
+@download.Version.Created
+@download.Version.ModifiedBy
+@download.Version.Modified
+@download.Version.PublishedBy
+@download.Version.Published
+@download.Version.VersionNo
+```
+
+### Asset - Field data
+```cs
+@download.Get("title")
+@download.Get("description")
+@download.Get("entryTitle")
+```
+
+
+## Getting an image from an entry
+Images in entries are links to an Image asset - you need to get the image first, then access it's fields.
+
+### Get the linked image
+```cs
+@{
+    // Get the image instance from the entry  
+    var banImg = movie.Get<Image>("bannerImage");
+}
+
+// Example use
+
+<figure>
+    <img src="@banImg.Asset.Uri" 
+        alt="@banImg.Asset.Get("altText")" 
+        width="@banImg.Asset.Properties["width"]" 
+        height="@banImg.Asset.Properties["height"]">
+  <figcaption>@banImg.Caption</figcaption>
+</figure>
+
+```
+
+### Image instance properties
+The instance of the image has two properties; Caption and Asset. The caption allows some text to be associated with that instance of the image (but not the image asset itself) and the asset is the link to the image.
+
+### Image caption
+```cs
+@banImg.Caption
+```
+
+### Image Asset - standard properties
+```cs
+@banImg.Asset.Id
+@banImg.Asset.Uri
+@banImg.Asset.ProjectId
+@banImg.Asset.ContentTypeId
+@banImg.Asset.DataFormat
+@banImg.Asset.Language
+```
+
+### Image Asset - properties
+```cs
+@banImg.Asset.Properties.Filename
+@banImg.Asset.Properties.FileSize
+// Width and height are extended properties so are accessed slightly differently
+@banImg.Asset.Properties["width"]
+@banImg.Asset.Properties["height"]
+```
+
+### Image Asset - Version
+```cs
+@banImg.Asset.Version.CreatedBy
+@banImg.Asset.Version.Created
+@banImg.Asset.Version.ModifiedBy
+@banImg.Asset.Version.Modified
+@banImg.Asset.Version.PublishedBy
+@banImg.Asset.Version.Published
+@banImg.Asset.Version.VersionNo
+```
+
+### Image Asset - Field data
+As per a standard asset but with an alt text field.
+```cs
+@banImg.Asset.Get("title")
+@banImg.Asset.Get("description")
+@banImg.Asset.Get("altText")
+@banImg.Asset.Get("entryTitle")
+```
+
