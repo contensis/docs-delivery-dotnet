@@ -26,18 +26,7 @@
 @movie.DataFormat
 @movie.Language
 ```
-<!--
-| Name | Type | Description | Code example
-| :------- | :--- | :---------- | :--------- |
-| Id | Guid | The entry identifier | @movie.Id |
-| ContentTypeId | string  | The API identifier of the content type that the entry is based on | @movie.ContentTypeId |
-| ProjectId | string | The API identifer of the project the entry belongs to | @movie.ProjectId |
-| DataFormat | string | Either 'entry' or 'asset' | @movie.DataFormat | 
-| Language | string | The language of the entry instance | @movie.Language |
-| Version | [VersionInfo](/model/versioninfo.md) | Version information for the entry | - |
-| Metadata | Metadata | Metadata associated with the entry instance | - |
-| Owner | string | The id of the entry owner | @movie.Owner |
--->
+
 ### Entry - Version data
 
 ```cs
@@ -49,17 +38,6 @@
 @movie.Version.Published
 @movie.Version.VersionNo
 ```
-<!--
-| Name | Type | Description | Code example
-| :------- | :--- | :---------- | :--------- | 
-| Created | DateTime | The date the entry was created | @movie.Version.Created |
-| CreatedBy | string | The user id of who created the entry | @movie.Version.CreatedBy |
-| Modified | DateTime | The date the entry version was last modified | @movie.Version.Modified |
-| ModifiedBy | string | The user id of who last modified the entry | @movie.Version.ModifiedBy |
-| Published | DateTime | The date the entry version was last published | @movie.Version.Published |
-| PublishedBy | string | The user id of who last published the entry | @movie.Version.PublishedBy |
-| VersionNo | string | The version of the entry | @movie.Version.VersionNo |
--->
 
 ### Entry - Field data
 These are the fields that you can set and name when you build the content type e.g.
@@ -73,7 +51,7 @@ movie.Get<Int>("revenue")               // number set to integer
 movie.Get<Double>("revenue")            // number set to decimal
 movie.Get<Location>("shootLoc")         // lat/lon location coordinates
 movie.Get<string>("list")               // single list item
-movie.Get<List<string>>("listMulti")    // Multiple choice list 
+movie.Get<List<string>>("listMulti")    // multiple choice list 
 movie.Get<TaxonomyNode>("genre")        // single taxonomy
 movie.Get<List<TaxonomyNode>>("genres") // multi choice taxonomy
 movie.Get<DateTime>("releaseDate")      // single date
@@ -127,7 +105,7 @@ Wrap in in Html.Raw() to output as HTML
 
 // Multiple selection list
 @{
-    var genres = landing.Get<List<string>>("genres");
+    var genres = landing.Get<List<TaxonomyNode>>("genres");
     if(genres.Count > 0)
     {
         <ul>
@@ -326,5 +304,46 @@ As per a standard asset but with an alt text field.
 @banImg.Asset.Get("description")
 @banImg.Asset.Get("altText")
 @banImg.Asset.Get("entryTitle")
+```
+## Components
+
+```cs 
+// Get the component as a dynamic object
+dynamic banner = movie.Get("banner");
+
+// Text in a components
+
+<h1>@banner.title</h1>
+
+// Image in a component
+<img src="@banner.image.Asset.Uri" alt="@banner.image.Asset.Get("altText")" 
+    width="@banner.image.Asset.Properties["width"]" 
+    height="@banner.image.Asset.Properties["height"]"/>
+```
+
+## Repeating fields
+Repeating fields are just arrays of items that can be looped through
+```cs
+@{
+    // get multiple text fields    
+    var multiText = movie.Get<List<string>>("text");
+    
+    if(multiText.Count > 0)
+    {
+        <ul>
+            @foreach(var textItem in multiText){
+                <li>@textItem</li>
+            }
+        </ul>
+    }
+}
+
+
+```
+## Debugging
+
+```cs
+// output json of an object
+<pre>@Zengenti.ObjectExtensions.ToJson(banner.image.Asset)</pre>
 ```
 
