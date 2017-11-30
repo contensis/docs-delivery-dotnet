@@ -1,3 +1,6 @@
+---
+description: An overview of how the .NET Delivery API authenticates with Contensis. 
+---
 # Authentication
 
 ## Overview
