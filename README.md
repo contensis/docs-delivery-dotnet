@@ -1,3 +1,7 @@
+---
+description: The Delivery API is our primary API, it enables you to get content and data into your webpages or applications.
+---
+
 # Contensis .NET Delivery API
 
 ## Introduction
