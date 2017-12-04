@@ -1,3 +1,6 @@
+---
+description: The getting started guide take you through rendering content created through content types and entries using Razor views and the .NET Delivery API.
+---
 # Getting started
 
 This guide will take you through rendering content created using the content type builder and entries screens in Contensis, into razor views using the .NET Delivery API. Throughout the documentation we use examples based on movies.

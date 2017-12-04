@@ -1,3 +1,7 @@
+---
+description: The .NET Delivery API is focused on enabling you to get content and data into your webpages or applications as quickly and easily as possible.
+---
+
 # Contensis .NET Delivery API
 
 ## Introduction
