@@ -309,6 +309,52 @@ As per a standard asset but with an alt text field.
 @banImg.Asset.Get("altText")
 @banImg.Asset.Get("entryTitle")
 ```
+
+## Composer
+
+```cs
+@{
+
+    // Get the synopsis field as a ComposedField type
+    var synopsis = filmEntry.Get<ComposedField>("synopsis");
+}
+
+<div>
+
+@foreach(ComposedFieldItem item in synopsis)
+{
+    // Loop through the ComposedFieldItems in the ComposedField and render the items
+    //
+
+    if (item.Type == "mainHeading")
+    {
+        <h1>@item.Value()</h1>
+    }
+
+    if (item.Type == "subHeading")
+    {
+        <h2>@item.Value()</h2>
+    }
+
+    if (item.Type == "markup")
+    {
+        <div>@Html.Raw(@item.Value<string>())</div>
+    }
+
+    if (item.Type == "quote")
+    {
+        var filmQuote = item.Value<Quote>();
+
+        <blockquote cite="@filmQuote.Source">
+            @filmQuote.Text
+        </blockquote>
+    }
+}
+
+</div>
+
+```
+
 ## Components
 
 ```cs 
