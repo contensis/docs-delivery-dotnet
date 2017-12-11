@@ -163,6 +163,13 @@ Wrap in in Html.Raw() to output as HTML
 <div class="start">@filmingPeriod.From</div>
 
 <div class="end">@filmingPeriod.To</div>
+
+// DateRange is a nullable DateTime so add .Value when formatting:
+
+<div class="start">@filmingPeriod.From.Value.ToString("d MMMM yyyy")</div>
+
+<div class="end">@filmingPeriod.To.Value.ToString("d MMMM yyyy")</div>
+
 ```
 
 ### Boolean
@@ -338,7 +345,7 @@ As per a standard asset but with an alt text field.
 
     if (item.Type == "markup")
     {
-        <div>@Html.Raw(@item.Value<string>())</div>
+        <div>@Html.Raw(item.Value<string>())</div>
     }
 
     if (item.Type == "quote")

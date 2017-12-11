@@ -107,7 +107,7 @@ The example below shows how a composed field with different field types can be r
 
     if (item.Type == "markup")
     {
-        <div>@Html.Raw(@item.Value<string>())</div>
+        <div>@Html.Raw(item.Value<string>())</div>
     }
 
     if (item.Type == "quote")
