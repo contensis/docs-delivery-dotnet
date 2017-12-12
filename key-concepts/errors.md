@@ -1,5 +1,5 @@
 ---
-description: .NET DELIVERY API: All non-success HTTP responses are treated as errors and are wrapped up in the client APIs to allow them to be handled.
+description: .NET DELIVERY API- All non-success HTTP responses are treated as errors and are wrapped up in the client APIs to allow them to be handled.
 ---
 # Errors
 
