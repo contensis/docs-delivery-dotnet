@@ -46,13 +46,15 @@ description: Cheatsheet to provide code examples for the .Net API
 ### Entry - Field data
 These are the fields that you can set and name when you build the content type e.g.
 ```cs
+// Explicitly typed variables:
+
 movie.Get<string>("title")              // text string
 movie.Get<string>("description")        // text string
 movie.Get<string>("content")            // HTML markup
 movie.Get<Image>("bannerImage")         // image
 movie.Get<Entry>("download")            // linked entry e.g. PDF download
-movie.Get<Int>("revenue")               // number set to integer
-movie.Get<Double>("revenue")            // number set to decimal
+movie.Get<int>("revenue")               // number set to integer
+movie.Get<double>("revenue")            // number set to decimal
 movie.Get<Location>("shootLoc")         // lat/lon location coordinates
 movie.Get<string>("list")               // single list item
 movie.Get<List<string>>("listMulti")    // multiple choice list 
@@ -61,6 +63,13 @@ movie.Get<List<TaxonomyNode>>("genres") // multi choice taxonomy
 movie.Get<DateTime>("releaseDate")      // single date
 movie.Get<DateRange>("filmingPeriod")   // date range
 movie.Get<bool>("showOnHomepage")       // boolean
+
+// If in an HTML element need to be written slightly differently e.g.
+
+<div>@(movie.Get<string>("title"))</div>
+<div>@(movie.Get<string>("title"))</div>
+// etc...
+
 ```
 
 
@@ -185,7 +194,7 @@ Wrap in in Html.Raw() to output as HTML
 ```
 
 ## Assets - getting a file (e.g. PDF) from an entry
-PDFs, zip, and other file types in entries are just links to an entry with a type of "asset" - you need to get the asset first, then access it's fields.
+PDFs, zip, and other file types in entries are just links to an entry with a type of "asset" - you need to get the asset first, then access its fields.
 
 
 
@@ -249,7 +258,7 @@ PDFs, zip, and other file types in entries are just links to an entry with a typ
 
 
 ## Getting an image from an entry
-Images in entries are links to an Image asset - you need to get the image first, then access it's fields.
+Images in entries are links to an Image asset - you need to get the image first, then access its fields.
 
 ### Get the linked image
 ```cs
@@ -401,6 +410,7 @@ Repeating fields are just arrays of items that can be looped through
 
 ```cs
 // output json of an object
-<pre>@Zengenti.ObjectExtensions.ToJson(banner.image.Asset)</pre>
+<pre>@banner.image.Asset.ToJson</pre>
+
 ```
 
