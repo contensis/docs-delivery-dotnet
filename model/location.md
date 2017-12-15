@@ -1,5 +1,8 @@
-# Location
 
+---
+description: The Location class represents a geographic coordinate that specifies the position of a point on the Earth's surface.
+---
+# Location
 
 The Location class represents a geographic coordinate that specifies the position of a point on the Earth's surface.
 
