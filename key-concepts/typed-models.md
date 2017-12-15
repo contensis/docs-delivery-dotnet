@@ -1,3 +1,6 @@
+---
+description: Typed models in the .NET Delivery API is the concept of handling entry data as strongly-typed objects instead of using general-purpose entry instances. 
+---
 # Typed models
 
 Typed models in the .NET Delivery API is the concept of handling entry data as strongly-typed objects instead of using general-purpose entry instances. When invoking any of the Get, List or Search operations, a Generic type parameter can be specified to stipulate the type you want the data to be returned as.
