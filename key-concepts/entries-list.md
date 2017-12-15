@@ -1,5 +1,4 @@
 ---
-
 description: Requesting a list of entries can be achieved by using one of the List method overloads.
 ---
 # List entries
