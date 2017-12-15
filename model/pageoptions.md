@@ -1,3 +1,7 @@
+---
+description: The PageOption type defines page index and page size parameters required for listings and searches.
+---
+
 # PageOptions
 
 The PageOption type defines page index and page size parameters required for listings and searches.
