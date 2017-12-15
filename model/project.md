@@ -1,3 +1,6 @@
+---
+description: A project object can be used to understand the languages that the project supports and which language is the primary language. 
+---
 # Project
 
 A project object can be used to understand the languages that the project supports and which language is the primary language. A client instance is initialized within the context of a single project, which can be accessible directly as a property of the client.
