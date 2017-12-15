@@ -1,3 +1,6 @@
+---
+description: A content type resource can be retrieved from the Delivery API to understand the schema of an Entry.
+---
 # Content type
 
 A content type resource can be retrieved from the Delivery API to understand the schema of an [Entry](entry.md). Entries are constructed and validated using the information defined in the fields collection.
