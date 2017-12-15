@@ -1,3 +1,6 @@
+---
+description: The ContensisClientConfiguration is a container for the options that are required for setting the defaults settings. 
+---
 # ContensisClientConfiguration
 
 The ContensisClientConfiguration is a container for the options that are required for setting the defaults settings.
