@@ -1,3 +1,6 @@
+---
+description: The Metadata type is a object container for metadata that is associated with an Entry. 
+---
 # Metadata
 
 The Metadata type is a object container for metadata that is associated with an [Entry](/model/entry.md). The values contained can be any type which can be accessed as either a dynamic object or cast to a specific type.
