@@ -1,3 +1,7 @@
+---
+
+description: All operations for the API hang off the ContensisClient type, which is created using the static method ContensisClient.Create().
+---
 # API instantiation
 
 ## Client creation
