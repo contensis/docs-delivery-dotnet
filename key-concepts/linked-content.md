@@ -1,3 +1,6 @@
+---
+description: Linked content can be unresolved or resolved depending on whether a linkDepth value has been provided when retrieving entries using the Get, List or Search methods.
+---
 # Linked content
 
 An entry can link to other entries or assets as [entry](/model/entry.md), [asset](/model/asset.md) or [image](/model/image.md) field types. They can be defined as a standard entry field or as a [composed](/model/composed.md) field type in the content type. These links can be singular or multiples of the same content type e.g. Actor, Image, etc.
