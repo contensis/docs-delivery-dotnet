@@ -1,5 +1,7 @@
+---
+description: The TaxonomyNode type represents a node in the taxonomy tree defined in Contensis.
+---
 # TaxonomyNode
-
 
 The TaxonomyNode type represents a node in the taxonomy tree defined in Contensis. A TaxonomyNode can have child nodes which are automatically retrieved when the `Children` property is accessed.
 
