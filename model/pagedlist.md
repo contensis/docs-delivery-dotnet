@@ -1,3 +1,7 @@
+---
+description: The PagedList is a object that is used to describe paging details for listing and search results.
+---
+
 # PagedList
 
 The PagedList is a object that is used to describe paging details for listing and search results.
