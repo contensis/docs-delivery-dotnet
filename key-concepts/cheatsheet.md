@@ -111,23 +111,39 @@ Wrap in in Html.Raw() to output as HTML
 }
 ```
 
-### Taxonomy
-```cs
-// Single selection list item
-<p>@movie.Get("genre")</p>
+### Taxonomy fields in an entry
 
-// Multiple selection list
+```cs
+// Single selection taxonomy node instance
+
+var genre = movie.Get<TaxonomyNode>("genre");
+<p>@genre.Key</p> // Taxonomy Key e.g. 0/24/27
+<p>@genre.Name</p> // Taxonomy Name e.g. News
+
+// Multiple selection taxonomy
 @{
     var genres = landing.Get<List<TaxonomyNode>>("genres");
     if(genres.Count > 0)
     {
         <ul>
             @foreach(var item in genres){
-                <li>@item.Name</li>
+                <li>@item.Key @item.Name</li>
             }
         </ul>
     }
 }
+
+// Accessing child nodes
+@{
+    var genre = landing.Get<TaxonomyNode>("genre");
+    <ul>
+        @foreach(var item in genre.Children){
+            <li>@item.Key @item.Name</li>
+        }
+    </ul>
+}
+
+
 ```
 ### Location
 ```cs
