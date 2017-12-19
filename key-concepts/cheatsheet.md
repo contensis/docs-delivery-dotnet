@@ -115,12 +115,12 @@ Wrap in in Html.Raw() to output as HTML
 
 ```cs
 // Single selection taxonomy node instance
-
-var genre = movie.Get<TaxonomyNode>("genre");
-<p>@genre.Key</p> // Taxonomy Key e.g. 0/24/27
-<p>@genre.Name</p> // Taxonomy Name e.g. News
-
-// Multiple selection taxonomy
+@{
+    var genre = movie.Get<TaxonomyNode>("genre");
+    <p>@genre.Key</p> // Taxonomy Key e.g. 0/24/27
+    <p>@genre.Name</p> // Taxonomy Name e.g. News
+}
+// Multiple selection taxonomy node instance
 @{
     var genres = landing.Get<List<TaxonomyNode>>("genres");
     if(genres.Count > 0)
@@ -169,7 +169,7 @@ var genre = movie.Get<TaxonomyNode>("genre");
 
 ```cs
 @{
-    // Get the field value as a DateRange instance.
+    // Get the field value as a DateTime instance.
     var releaseDate = movie.Get<DateTime>("releaseDate");
 }
 
