@@ -426,7 +426,7 @@ Repeating fields are just arrays of items that can be looped through
 
 ```cs
 // output json of an object
-<pre>@banner.image.Asset.ToJson</pre>
+<pre>@banner.image.Asset.ToJson()</pre>
 
 ```
 
