@@ -10,7 +10,8 @@ The PagedList is a object that is used to describe paging details for listing an
 | :--- | :--- | :---------- |
 | PageIndex | `int` | The index of the result set to return |
 | PageSize | `int` | The size of the result set to return |
-| TotalCount | `int` | The total number of results available |
+| TotalCount | `long` | The total number of results available |
+| PageCount | `long` | The calculated page count based on the TotalCount and PageSize |
 | Items | `IList<T>` | A container for the items being returned |
 
 ## Example
@@ -33,14 +34,11 @@ The `PagedList` properties provide the information required to implement paging.
     // Get the first 10 movie entries
     var moviesList = client.Entries.List("movies", new PageOptions(selectedPageIndex, PageSize));
 
-    // Calculate the total number of pages
-    var pageCount = (int)(Math.Ceiling((double)moviesList.TotalCount/PageSize));
-
     // Render a pager, applying a 'selected' class for the current page
 }
 
 <ul class="pager">
-    @for(var index = 1; index <= pageCount; index++)
+    @for(var index = 1; index <= movieList.PageCount; index++)
     {
         var selectedClass = (selectedPageIndex == index ? "selected" : null);
 
