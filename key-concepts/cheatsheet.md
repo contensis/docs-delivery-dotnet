@@ -422,6 +422,58 @@ Repeating fields are just arrays of items that can be looped through
 
 
 ```
+
+## Search
+
+```cs 
+@using Zengenti.Contensis.Delivery
+@using Zengenti.Data
+@using Zengenti.Search
+
+@{
+    var client = ContensisClient.Create();
+
+    // create query
+    var query = new Query(
+        Op.EqualTo("sys.contentTypeId", "movie") // get all movies
+    );
+
+    query.OrderBy.Add("-releaseDate") // order by release date descending
+    query.PageIndex = 1; // start at page 1
+    query.PageSize = 50; // 50 items per page
+
+    // Execute the search
+    var results = client.Entries.Search(query);
+}
+```
+
+## Search an object array
+Use [ ] to search through an object array e.g. a category taxonomy list or multiple linked entries.
+```cs
+@using Zengenti.Contensis.Delivery
+@using Zengenti.Data
+@using Zengenti.Search
+
+@{
+    var client = ContensisClient.Create();
+
+    // create query
+    var query = new Query(
+        Op.And(
+            Op.EqualTo("sys.contentTypeId", "movie"), // get all movies
+            Op.EqualTo("categories[].sys.id", "action") // With a category of action
+        )
+    );
+
+    query.OrderBy.Add("-releaseDate") // order by release date descending
+    query.PageIndex = 1; // start at page 1
+    query.PageSize = 50; // 50 items per page
+
+    // Execute the search
+    var results = client.Entries.Search(query);
+}
+```
+
 ## Debugging
 
 ```cs
