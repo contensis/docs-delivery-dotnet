@@ -1,3 +1,6 @@
+---
+description: The Image type represents a link to an image with an associated caption, if required.
+---
 # Image
 
 The Image type represents a link to an image with an associated caption, if required.
