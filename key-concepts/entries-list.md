@@ -603,7 +603,7 @@ var entries = await client.Entries.ListAsync<Movie>("movie", new PageOptions(3, 
 
 ## List with options object
 
-Lists entries using an EntryListOptions object to allow more granular control of entries being returned.
+Lists entries using an [EntryListOptions](/model/entrylistoptions.md) object to allow more granular control of entries being returned.
 
 ### Syntax
 
@@ -616,7 +616,7 @@ public PagedList<Entry> List(EntryListOptions listOptions)
 ### Parameters
 
 *listOptions*
-> Type: `EntryListOptions`
+> Type: [EntryListOptions](/model/entrylistoptions.md)
 > Allows all parameters to be optionally set and exposes less commonly used parameters.
 
 ### Remarks
@@ -647,7 +647,7 @@ var entries = client.Entries.List(new EntryListOptions{
 
 ## List as typed model with options object
 
-Lists entries as typed models using an EntryListOptions object to allow more granular control of entries being returned.
+Lists entries as typed models using an [EntryListOptions](/model/entrylistoptions.md) object to allow more granular control of entries being returned.
 
 ### Syntax
 
@@ -663,7 +663,7 @@ public PagedList<T> List<T>(EntryListOptions listOptions)
 > The model class, either a plain class or inheriting from EntryModel.
 
 *listOptions*
-> Type: `EntryListOptions`
+> Type: [EntryListOptions](/model/entrylistoptions.md)
 > Allows all parameters to be optionally set and exposes less commonly used parameters.
 
 ### Remarks
@@ -702,7 +702,7 @@ var entries = client.Entries.List<Movie>(new EntryListOptions{
 
 ## List with options object asynchronously
 
-Lists entries using an EntryListOptions object to allow more granular control of entries being returned.
+Lists entries using an [EntryListOptions](/model/entrylistoptions.md) object to allow more granular control of entries being returned.
 
 ### Syntax
 
@@ -715,7 +715,7 @@ public Task<PagedList<Entry>> ListAsync(EntryListOptions listOptions)
 ### Parameters
 
 *listOptions*
-> Type: `EntryListOptions`  
+> Type: [EntryListOptions](/model/entrylistoptions.md)
 > Allows all parameters to be optionally set and exposes less commonly used parameters.
 
 ### Remarks
@@ -744,7 +744,7 @@ var entries = await client.Entries.ListAsync(new EntryListOptions{
 
 ## List as typed model with options object asynchronously
 
-Lists entries using an EntryListOptions object to allow more granular control of entries being returned.
+Lists entries using an [EntryListOptions](/model/entrylistoptions.md) object to allow more granular control of entries being returned.
 
 ### Syntax
 
@@ -760,7 +760,7 @@ public async Task<PagedList<T>> ListAsync(EntryListOptions listOptions)
 > The model class, either a plain class or inheriting from EntryModel.
 
 *listOptions*
-> Type: `EntryListOptions`  
+> Type: [EntryListOptions](/model/entrylistoptions.md)  
 > Allows all parameters to be optionally set and exposes less commonly used parameters.
 
 ### Remarks
