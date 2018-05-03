@@ -139,6 +139,18 @@ var query = new Query(
     Op.EqualTo("movieQuote[].source", "Bruce Willis"));
 ```
 
+## Limiting fields
+The fields returned in entries can be limited to reduce the payload. Any fields specified are carried over into linked entries if specifying a linkDepth.
+
+### Example field limiting
+
+```cs
+var query = new Query(
+    Op.EqualTo("title", "Interstellar"));
+    query.Fields = new[] {"title", "movieQuote"};
+)
+```
+
 ## Complete example
 
 The example below combines the ordering and paging concepts:
@@ -159,6 +171,7 @@ The example below combines the ordering and paging concepts:
     query.OrderBy.Add("-releaseDate")
     query.PageIndex = 1;
     query.PageSize = 50;
+    query.Fields = new[] {"title"};
 
     // Execute the search
     var results = client.Entries.Search(query);
