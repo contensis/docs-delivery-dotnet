@@ -42,7 +42,7 @@ public Entry Get(Guid id, string language = null, int linkDepth = 0, IList<strin
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 *fields*
-> Type: `stringArray`
+> Type: `IList<string>`
 > The list of fields to include in the entry. By default, all fields are returned.
 
 
@@ -92,7 +92,7 @@ public T Get<T>(Guid id, string language = null, int linkDepth = 0, IList<string
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 *fields*
-> Type: `stringArray`
+> Type: `IList<string>`
 > The list of fields to include in the entry. By default, all fields are returned.
 
 ### Remarks
@@ -147,7 +147,7 @@ public Entry Get(string id, string languageCode = null, int linkDepth = 0, IList
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 *fields*
-> Type: `stringArray`
+> Type: `IList<string>`
 > The list of fields to include in the entry. By default, all fields are returned.
 
 ### Remarks
@@ -196,7 +196,7 @@ public T Get<T>(string id, string languageCode = null, int linkDepth = 0, IList<
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 *fields*
-> Type: `stringArray`
+> Type: `IList<string>`
 > The list of fields to include in the entry. By default, all fields are returned.
 
 ### Remarks
@@ -255,7 +255,7 @@ public async Task<Entry> GetAsync(Guid id, string language = null, int linkDepth
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 *fields*
-> Type: `stringArray`
+> Type: `IList<string>`
 > The list of fields to include in the entry. By default, all fields are returned.
 
 
@@ -305,7 +305,7 @@ public async Task<T> GetAsync<T>(Guid id, string language = null, int linkDepth 
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
 *fields*
-> Type: `stringArray`
+> Type: `IList<string>`
 > The list of fields to include in the entry. By default, all fields are returned.
 
 ### Remarks
@@ -360,7 +360,7 @@ public async Task<Entry> GetAsync(string id, string language = null, int linkDep
 > The depth at which to resolve the full entry data for a linked entry. The max depth that can be specified is 10 - larger values will be handled as being 10. By default, no entry data is resolved.
 
 *fields*
-> Type: `stringArray`
+> Type: `IList<string>`
 > The list of fields to include in the entry. By default, all fields are returned.
 
 ### Remarks
@@ -409,7 +409,7 @@ public async Task<T> GetAsync<T>(string id, string language = null, int linkDept
 > The depth at which to resolve the full entry data for a linked entry. The max depth that can be specified is 10 - larger values will be handled as being 10. By default, no entry data is resolved.
 
 *fields*
-> Type: `stringArray`
+> Type: `IList<string>`
 > The list of fields to include in the entry. By default, all fields are returned.
 
 ### Remarks
