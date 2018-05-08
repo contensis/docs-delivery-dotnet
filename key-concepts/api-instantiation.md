@@ -19,7 +19,7 @@ var client = ContensisClient.Create();
 
 ### Connecting to a different project
 
-Connecting to a different project is useful if there is a shared resources project.
+Connecting to a different project is useful if there is a shared resources project. The projectID can be found in the project overview screen in the management console.
 
 ```cs
 var sharedResourcesClient = ContensisClient.Create("PUT_PROJECT_ID_HERE");
@@ -27,7 +27,7 @@ var sharedResourcesClient = ContensisClient.Create("PUT_PROJECT_ID_HERE");
 
 ### Connecting from a non-Contensis website
 
-Creating a client from outside a Contensis website
+Creating a client from outside a Contensis website.
 
 ```cs
 var client = ContensisClient.Create("PUT_PROJECT_ID_HERE", "http://cms.contensis.com", "PUT_CLIENT_ID_HERE", "PUT_SHARED_SECRET_HERE", versionStatus = VersionStatus.Latest);
