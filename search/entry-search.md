@@ -92,14 +92,14 @@ query.OrderBy.Add("title", "-releaseDate")
 
 ## Paging
 
-Paging allows the number of results to be restricted to a defined count so that the results are easier to handle and ensures a response is returned quickly. The page number can also be specified to allow which set of results is to be returned.
+Paging allows the number of results to be restricted to a defined count so that the results are easier to handle and ensures a response is returned quickly. The page index can also be specified to allow which set of results is to be returned. The page size is limited to a maximum of 10,000 however this is not recommended.
 
 ```cs
 // Create a query
 var query = new Query(
-    Op.EqualTo("contentTypeId", "film"));
+    Op.EqualTo("sys.contentTypeId", "film"));
 
-// Set the paging options
+// Set the number of entries to be returned per page
 query.PageSize = 50;
 
 // Get the 2nd result set
