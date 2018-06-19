@@ -8,7 +8,7 @@ The PagedList is a object that is used to describe paging details for listing an
 
 | Name | Type | Description |
 | :--- | :--- | :---------- |
-| PageIndex | `int` | The index of the result set to return |
+| PageIndex | `int` | The zero-based index of the result set to return |
 | PageSize | `int` | The size of the result set to return |
 | TotalCount | `long` | The total number of results available |
 | PageCount | `long` | The calculated page count based on the TotalCount and PageSize |
@@ -38,12 +38,12 @@ The `PagedList` properties provide the information required to implement paging.
 }
 
 <ul class="pager">
-    @for(var index = 1; index <= movieList.PageCount; index++)
+    @for(var index = 0; index < movieList.PageCount; index++)
     {
         var selectedClass = (selectedPageIndex == index ? "selected" : null);
 
         // The class will only be applied if selectedClass is not null
-        <li class="@selectedClass"><a href="#">@index</a></li>
+        <li class="@selectedClass"><a href="#">@(index + 1)</a></li>
     }
 </ul>
 ```

@@ -8,7 +8,7 @@ A content type resource can be retrieved from the Delivery API to understand the
 | Name | Type | Description |
 | :--- | :--- | :---------- |
 | Id | string | A unique content type identifier, e.g. "actor" |
-| ProjectId | string | The project identifier, e.g. "movieDb" |
+| ProjectId | string | The project identifier, e.g. "movieDb". Found in the project overview screen of the management console |
 | Name | [LocalizedValue](#localizedvalue)  | The friendly name given to a content type |
 | Description | [LocalizedValue](#localizedvalue) | The description text given to a content type |
 | EntryTitleField | string  | The id of the field which should be used as the title in entry listings |

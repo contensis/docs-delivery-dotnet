@@ -6,14 +6,14 @@ description: Requesting an individual entry can be achieved by using one of the 
 
 Requesting an individual entry can be achieved by using one of the `Get` method overloads.
 
-- [Get(Guid id, string language, int linkDepth)](#get-by-guid-id)
-- [Get&lt;T&gt;(Guid id, string language, int linkDepth)](#get-typed-model-by-guid-id)
-- [Get(string id, string language, int linkDepth)](#get-by-string-id)
-- [Get&lt;T&gt;(string id, string language, int linkDepth)](#get-typed-model-by-string-id)
-- [GetAsync(Guid id, string language, int linkDepth)](#get-by-guid-id-async)
-- [GetAsync&lt;T&gt;(Guid id, string language, int linkDepth)](#get-typed-model-by-guid-id-async)
-- [GetAsync(string id, string id, int linkDepth)](#get-by-string-id-async)
-- [GetAsync&lt;T&gt;(string id, string id, int linkDepth)](#get-typed-model-by-string-id-async)
+- [Get(Guid id, string language, int linkDepth, IList<string> fields)](#get-by-guid-id)
+- [Get&lt;T&gt;(Guid id, string language, int linkDepth, IList<string> fields)](#get-typed-model-by-guid-id)
+- [Get(string id, string language, int linkDepth, IList<string> fields)](#get-by-string-id)
+- [Get&lt;T&gt;(string id, string language, int linkDepth, IList<string> fields)](#get-typed-model-by-string-id)
+- [GetAsync(Guid id, string language, int linkDepth, IList<string> fields)](#get-by-guid-id-async)
+- [GetAsync&lt;T&gt;(Guid id, string language, int linkDepth, IList<string> fields)](#get-typed-model-by-guid-id-async)
+- [GetAsync(string id, string id, int linkDepth, IList<string> fields)](#get-by-string-id-async)
+- [GetAsync&lt;T&gt;(string id, string id, int linkDepth, IList<string> fields)](#get-typed-model-by-string-id-async)
 
 ## Get by Guid id
 
@@ -22,7 +22,7 @@ Gets an entry by its `Guid` identifier.
 ### Syntax
 
 ```cs
-public Entry Get(Guid id, string language = null, int linkDepth = 0)
+public Entry Get(Guid id, string language = null, int linkDepth = 0, IList<string> fields = null)
 {
 }
 ```
@@ -41,6 +41,11 @@ public Entry Get(Guid id, string language = null, int linkDepth = 0)
 > Type: `int`
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
+*fields*
+> Type: `IList<string>`
+> The list of fields to include in the entry. By default, all fields are returned.
+
+
 ### Remarks
 
 Returns *null* if an entry with an id matching the specified id does not exist.
@@ -51,8 +56,8 @@ Returns *null* if an entry with an id matching the specified id does not exist.
 // Create a client
 var client = ContensisClient.Create();
 
-// Get the french variation of the movie entry and resolve links to a depth of 3
-Entry movie = client.Entries.Get(movieGuid, "fr-fr", 3);
+// Get the french variation of the movie entry, returning just the title and resolving links to a depth of 3
+Entry movie = client.Entries.Get(movieGuid, "fr-fr", 3, new[] {"title"});
 ```
 
 ---
@@ -64,7 +69,7 @@ Gets a typed entry model by its `Guid` identifier.
 ### Syntax
 
 ```cs
-public T Get<T>(Guid id, string language = null, int linkDepth = 0) where T: class
+public T Get<T>(Guid id, string language = null, int linkDepth = 0, IList<string> fields = null) where T: class
 {
 }
 ```
@@ -86,6 +91,10 @@ public T Get<T>(Guid id, string language = null, int linkDepth = 0) where T: cla
 > Type: `int`
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
+*fields*
+> Type: `IList<string>`
+> The list of fields to include in the entry. By default, all fields are returned.
+
 ### Remarks
 
 Returns *null* if an entry with an id matching the specified id does not exist.
@@ -105,8 +114,8 @@ public class Movie
 // Create a client
 var client = ContensisClient.Create();
 
-// Get the french variation of the entry as a Movie type and resolve links to a depth of 3
-Movie movie = client.Entries.Get<Movie>(movieGuid, "fr-fr", 3);
+// Get the french variation of the movie entry, returning just the title and resolving links to a depth of 3
+Movie movie = client.Entries.Get<Movie>(movieGuid, "fr-fr", 3, new[] {"title"});
 ```
 
 ---
@@ -118,7 +127,7 @@ Gets an entry by its identifier.
 ### Syntax
 
 ```cs
-public Entry Get(string id, string languageCode = null, int linkDepth = 0)
+public Entry Get(string id, string languageCode = null, int linkDepth = 0, IList<string> fields = null)
 {
 }
 ```
@@ -137,6 +146,10 @@ public Entry Get(string id, string languageCode = null, int linkDepth = 0)
 > Type: `int`
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
+*fields*
+> Type: `IList<string>`
+> The list of fields to include in the entry. By default, all fields are returned.
+
 ### Remarks
 
 Returns *null* if an entry with an id matching the specified id does not exist. If the id string is not a valid `Guid` format then an exception will be thrown.
@@ -147,8 +160,8 @@ Returns *null* if an entry with an id matching the specified id does not exist. 
 // Create a client
 var client = ContensisClient.Create();
 
-// Get the french variation of the movie entry and resolve links to a depth of 3
-Entry movie = client.Entries.Get("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr", 3);
+// Get the french variation of the movie entry, returning just the title and resolving links to a depth of 3
+Entry movie = client.Entries.Get("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr", 3, new[] {"title"});
 ```
 
 ---
@@ -160,7 +173,7 @@ Gets a typed entry model by its identifier.
 ### Syntax
 
 ```cs
-public T Get<T>(string id, string languageCode = null, int linkDepth = 0) where T: class
+public T Get<T>(string id, string languageCode = null, int linkDepth = 0, IList<string> fields = null) where T: class
 {
 }
 ```
@@ -182,6 +195,10 @@ public T Get<T>(string id, string languageCode = null, int linkDepth = 0) where 
 > Type: `int`  
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
+*fields*
+> Type: `IList<string>`
+> The list of fields to include in the entry. By default, all fields are returned.
+
 ### Remarks
 
 Returns *null* if an entry with an id matching the specified id does not exist. If the id string is not a valid `Guid` format then an exception will be thrown.
@@ -200,8 +217,8 @@ public class Movie
 // Create a client
 var client = ContensisClient.Create();
 
-// Get the french variation of the movie entry as a Movie type and resolve links to a depth of 3
-Movie movie = client.Entries.Get<Movie>("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr", 3);
+// Get the french variation of the movie entry, returning just the title and resolving links to a depth of 3
+Movie movie = client.Entries.Get<Movie>("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr", 3, new[] {"title"});
 ```
 
 ---
@@ -218,7 +235,7 @@ Gets an entry by its `Guid` identifier asynchronously.
 ### Syntax
 
 ```cs
-public async Task<Entry> GetAsync(Guid id, string language = null, int linkDepth = 0)
+public async Task<Entry> GetAsync(Guid id, string language = null, int linkDepth = 0, IList<string> fields = null)
 {
 }
 ```
@@ -237,6 +254,11 @@ public async Task<Entry> GetAsync(Guid id, string language = null, int linkDepth
 > Type: `int`  
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
+*fields*
+> Type: `IList<string>`
+> The list of fields to include in the entry. By default, all fields are returned.
+
+
 ### Remarks
 
 Returns *null* if an entry with an id matching the specified id does not exist.
@@ -247,8 +269,8 @@ Returns *null* if an entry with an id matching the specified id does not exist.
 // Create a client
 var client = ContensisClient.Create();
 
-// Get the french variation of the movie entry and resolve links to a depth of 3
-Entry movie = await client.Entries.GetAsync(movieGuid, "fr-fr", 3);
+// Get the french variation of the movie entry, returning just the title and resolving links to a depth of 3
+Entry movie = await client.Entries.GetAsync(movieGuid, "fr-fr", 3, new[] {"title"});
 ```
 ---
 
@@ -260,7 +282,7 @@ Gets a typed model by its `Guid` identifier asynchronously.
 ### Syntax
 
 ```cs
-public async Task<T> GetAsync<T>(Guid id, string language = null, int linkDepth = 0) where T: class
+public async Task<T> GetAsync<T>(Guid id, string language = null, int linkDepth = 0, IList<string> fields = null) where T: class
 {
 }
 ```
@@ -282,6 +304,10 @@ public async Task<T> GetAsync<T>(Guid id, string language = null, int linkDepth 
 > Type: `int`  
 > The depth at which to resolve the full entry data for a linked entry, with a maximum depth value of 10 - larger values will be handled as being 10. By default, no entry data is resolved for linked entries.  **Please note:** linked assets are always fully resolved.
 
+*fields*
+> Type: `IList<string>`
+> The list of fields to include in the entry. By default, all fields are returned.
+
 ### Remarks
 
 Returns *null* if an entry with an id matching the specified id does not exist.
@@ -300,8 +326,8 @@ public class Movie
 // Create a client
 var client = ContensisClient.Create();
 
-// Get the french variation of the movie entry as a Movie type and resolve links to a depth of 3
-Movie movie = await client.Entries.GetAsync<Movie>(movieGuid, "fr-fr", 3);
+// Get the french variation of the movie entry as a Movie type, returning just the title and resolving links to a depth of 3
+Movie movie = await client.Entries.GetAsync<Movie>(movieGuid, "fr-fr", 3, new[] {"title"});
 ```
 ---
 
@@ -314,7 +340,7 @@ Gets an entry by its `string` identifier asynchronously.
 ### Syntax
 
 ```cs
-public async Task<Entry> GetAsync(string id, string language = null, int linkDepth = 0)
+public async Task<Entry> GetAsync(string id, string language = null, int linkDepth = 0, IList<string> fields = null)
 {
 }
 ```
@@ -333,6 +359,10 @@ public async Task<Entry> GetAsync(string id, string language = null, int linkDep
 > Type: `int`
 > The depth at which to resolve the full entry data for a linked entry. The max depth that can be specified is 10 - larger values will be handled as being 10. By default, no entry data is resolved.
 
+*fields*
+> Type: `IList<string>`
+> The list of fields to include in the entry. By default, all fields are returned.
+
 ### Remarks
 
 Returns *null* if an entry with an id matching the specified id does not exist. If the id string is not a valid `Guid` format then an exception will be thrown.
@@ -343,8 +373,8 @@ Returns *null* if an entry with an id matching the specified id does not exist. 
 // Create a client
 var client = ContensisClient.Create();
 
-// Get the french variation of the movie entry and resolve links to a depth of 3
-Entry movie = await client.Entries.GetAsync("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr", 3);
+// Get the french variation of the movie entry, returning just the title and resolving links to a depth of 3
+Entry movie = await client.Entries.GetAsync("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr", 3, new[] {"title"});
 ```
 
 ---
@@ -356,7 +386,7 @@ Gets an entry by its `string` identifier asynchronously.
 ### Syntax
 
 ```cs
-public async Task<T> GetAsync<T>(string id, string language = null, int linkDepth = 0) where T: class
+public async Task<T> GetAsync<T>(string id, string language = null, int linkDepth = 0, IList<string> fields = null) where T: class
 {
 }
 ```
@@ -378,6 +408,10 @@ public async Task<T> GetAsync<T>(string id, string language = null, int linkDept
 > Type: `int`
 > The depth at which to resolve the full entry data for a linked entry. The max depth that can be specified is 10 - larger values will be handled as being 10. By default, no entry data is resolved.
 
+*fields*
+> Type: `IList<string>`
+> The list of fields to include in the entry. By default, all fields are returned.
+
 ### Remarks
 
 Returns *null* if an entry with an id matching the specified id does not exist. If the id string is not a valid `Guid` format then an exception will be thrown.
@@ -397,8 +431,8 @@ public class Movie
 // Create a client
 var client = ContensisClient.Create();
 
-// Get the french variation of the movie entry as a Movie type and resolve links to a depth of 3
-Movie movie = await client.Entries.GetAsync<Movie>("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr", 3);
+// Get the french variation of the movie entry as a Movie type, returning just the title and resolving links to a depth of 3
+Movie movie = await client.Entries.GetAsync<Movie>("456e5f2a-a1cf-4520-a46c-e5f22ed299e8", "fr-fr", 3, new[] {"title"});
 ```
 
 ---

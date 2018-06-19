@@ -39,6 +39,7 @@
 
 * [ComposedField](/model/composed.md)
 * [DateRange](/model/daterange.md)
+* [EntryListOptions](/model/entrylistoptions.md)
 * [Image](/model/image.md)
 * [Location](/model/location.md)
 * [Quote](/model/quote.md)
