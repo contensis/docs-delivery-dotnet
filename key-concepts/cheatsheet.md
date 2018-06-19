@@ -221,7 +221,7 @@ PDFs, zip, and other file types in entries are just links to an entry with a typ
     var download = movie.Get<Entry>("download");
 
     // Get the asset instances from the entry  (multi)
-    List relatedDownloads = movie.Get<List<Entry>>("relatedFiles");
+    List<Entry> relatedDownloads = movie.Get<List<Entry>>("relatedFiles");
 }
 
 // Example use - single
