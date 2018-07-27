@@ -285,6 +285,7 @@ PDFs, zip, and other file types in entries are just links to an entry with a typ
 @download.Get("title")
 @download.Get("description")
 @download.Get("entryTitle")
+@download.Get("entryDescription")
 ```
 
 
@@ -364,6 +365,7 @@ As per a standard asset but with an alt text field.
 @banImg.Asset.Get("description")
 @banImg.Asset.Get("altText")
 @banImg.Asset.Get("entryTitle")
+@banImg.Asset.Get("entryDescription")
 ```
 
 ## Composer

@@ -112,7 +112,7 @@ query.PageIndex = 1;
 
 System fields such as id, contentTypeId, projectId, versionNo etc. are under the *sys* object and can be accessed using a dot notation, e.g. sys.id, sys.contentTypeId, sys.projectId, sys.version.versionNo.
 
-The *entryTitle* field is a dynamic value, determined by the *EntryTitleField* value in the content type.
+The *entryTitle* and *entryDescription* fields are dynamic values, determined by the *EntryTitleField* and *entryDescriptionField* values in the content type.
 
 ### Data fields
 
