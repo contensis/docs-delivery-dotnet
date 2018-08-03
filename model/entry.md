@@ -21,7 +21,7 @@ These are the standard properties that all entries have. An entry can have multi
 | Version | [VersionInfo](/model/versioninfo.md) | Version information for the entry |
 | Metadata | Metadata | Metadata associated with the entry instance |
 | Owner | string | The id of the entry owner |
-
+| Slug | string | The entry slug token |
 ## Methods
 
 | Method | Returns | Description |
