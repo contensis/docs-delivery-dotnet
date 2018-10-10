@@ -39,15 +39,15 @@ Unlike entry links, an asset link is always resolved so that the full asset deta
     // Get properties of the Image instance.
     var imgWidth = coverImage.Asset.Properties["width"];
     var imgHeight = coverImage.Asset.Properties["height"];
+    var altText = coverImage.Asset.Get("altText"); // The altText set from Contensis.
 
     // Get properties of the image set on the entry.
-
     var caption = coverImage.Caption;
     var altText = coverImage.AltText;
 }
 
 <figure>
-  <img src="@coverImage.Asset.Uri" alt="@coverImage.Asset.Get("altText")" width="@imgWidth" height="@imgHeight">
+  <img src="@coverImage.Asset.Uri" alt="@coverImage.AltText" width="@imgWidth" height="@imgHeight">
   <figcaption>@coverImage.Caption</figcaption>
 </figure>
 
