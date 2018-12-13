@@ -12,12 +12,12 @@ This guide will take you through rendering content created using the content typ
 
 ## Create a new project (optional)
 
-Projects are the home for all your content in Contensis. Either use an existing project or create a [new project](https://zenhub.zengenti.com/Contensis/9/kb/setup-and-configuration/Administration/Create-a-project.aspx) called MovieDB. You can use the default values for assets and languages. If you're creating a new project you'll need to setup a publishing server, [follow our guide](https://zenhub.zengenti.com/Contensis/9/kb/setup-and-configuration/Configuration/Setup-and-configure-a-publishing-server.aspx) to get one up and running.
+Projects are the home for all your content in Contensis. Either use an existing project or create a [new project](https://zenhub.zengenti.com/Contensis/11.2/kb/setup-and-configuration/Administration/Create-a-project.aspx) called MovieDB. You can use the default values for assets and languages. If you're creating a new project you'll need to setup a publishing server, [follow our guide](https://zenhub.zengenti.com/Contensis/11.2/kb/setup-and-configuration/Configuration/Setup-and-configure-a-publishing-server.aspx) to get one up and running.
 
 
 ## Create a movie content type
 
-You can [create a new content type](https://zenhub.zengenti.com/Contensis/9/kb/content-types-and-entries/content-types/create-a-content-type.aspx) using the content type builder. Create a new content type called *Movie* with the following fields.
+You can [create a new content type](https://zenhub.zengenti.com/Contensis/11.2/kb/content-types-and-entries/content-types/create-a-content-type.aspx) using the content type builder. Create a new content type called *Movie* with the following fields.
 
 | Field name | API id | Type | Description |
 | ---------- | ------ | ---- | ----------- |
@@ -41,9 +41,9 @@ We will end up with the following folder and file structure.
 
 Now it's time to create some content!
 
-Head over to either [IMDB](http://www.imdb.com/) or [The Movie DB](https://www.themoviedb.org/) and choose 5 of your favourite movies to use, and then [create](https://zenhub.zengenti.com/Contensis/9/kb/content-types-and-entries/entries/Create-an-entry.aspx) a set of entries from you new content type.
+Head over to either [IMDB](http://www.imdb.com/) or [The Movie DB](https://www.themoviedb.org/) and choose 5 of your favourite movies to use, and then [create](https://zenhub.zengenti.com/Contensis/11.2/kb/content-types-and-entries/entries/Create-an-entry.aspx) a set of entries from you new content type.
 
-The content will benefit from the inclusion of images, so [upload](https://zenhub.zengenti.com/Contensis/9/kb/Assets-uploadable-content/Images/upload-an-image.aspx) the cover images for the movies into the images folder and link to them from your newly created entries.
+The content will benefit from the inclusion of images, so [upload](https://zenhub.zengenti.com/Contensis/11.2/kb/Assets-uploadable-content/Images/upload-an-image.aspx) the cover images for the movies into the images folder and link to them from your newly created entries.
 
 ## Create a movie listing in a razor view
 
