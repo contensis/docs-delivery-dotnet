@@ -2,10 +2,7 @@
 description: An entry definition in the Delivery API contains a mixture of standard properties and properties that have been defined by the content type that an entry is based on.
 ---
 # Entries
-
-A full [overview of entries can be found here](https://zenhub.zengenti.com/Contensis/9/kb/content-types-and-entries/entries/Entries-overview.aspx).
-
-An entry definition in the Delivery API contains a mixture of standard properties and properties that have been defined by the content type that an entry is based on.
+An entry definition in the Delivery API contains a mixture of standard properties and properties that have been defined by the content type that an [entry](https://zenhub.zengenti.com/Contensis/11.2/kb/content-types-and-entries/entries/Entries-overview.aspx) is based on.
 
 ## Standard properties
 
