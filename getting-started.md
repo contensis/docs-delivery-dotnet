@@ -49,7 +49,7 @@ The content will benefit from the inclusion of images, so [upload](https://zenhu
 
 Next we'll create the razor view that will render the movie listing in a Contensis page. First, ensure that you have a new page called 'Movies' created in the demo folder with a placeholder that supports razor views.
 
-> **Note** If you don't know how, then [learn how to create your own pages with razor views](https://zenhub.zengenti.com/Contensis/9/Development/Razor/Razoroverview.aspx).
+> **Note** If you don't know how, then [learn how to create your own pages with razor views](https://zenhub.zengenti.com/Contensis/11.2/Development/Razor/Razoroverview.aspx).
 
 Create a new C# razor view called *movie-listing* within the demo folder with the following code.
 
