@@ -3,7 +3,7 @@ description: Requesting a node can be achieved by using one of the Get method ov
 ---
 # Getting nodes
 
-Requesting nodes can be achieved by using one of the `Get` methods.
+Requesting [nodes](/model/node.md) can be achieved by using one of the `Get` methods.
 
 - [GetRoot(string language, int depth](#get-root)
 - [GetRootAsync(string language, int depth](#get-root-async)

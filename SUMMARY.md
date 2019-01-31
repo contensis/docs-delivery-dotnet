@@ -23,7 +23,7 @@
 * [Taxonomy fields](/key-concepts/taxonomy-fields.md)
 * [Typed models](/key-concepts/typed-models.md)
 * [Components](/key-concepts/components.md)
-* [Nodes](/key-concepts/node-get.md)
+* [Navigation nodes](/key-concepts/node-get.md)
 
 ## Model
 

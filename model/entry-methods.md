@@ -2,7 +2,7 @@
 
 ## Get
 
-Gets a field from an entry by *fieldName* and returns a dynamic object instance. 
+Gets a field from an entry by *fieldName* and returns a dynamic object instance.
 
 ### Syntax
 
