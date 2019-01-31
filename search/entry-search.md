@@ -92,14 +92,14 @@ query.OrderBy.Add("title", "-releaseDate")
 
 ## Paging
 
-Paging allows the number of results to be restricted to a defined count so that the results are easier to handle and ensures a response is returned quickly. The page number can also be specified to allow which set of results is to be returned.
+Paging allows the number of results to be restricted to a defined count so that the results are easier to handle and ensures a response is returned quickly. The page index can also be specified to allow which set of results is to be returned. The page size is limited to a maximum of 10,000 however this is not recommended.
 
 ```cs
 // Create a query
 var query = new Query(
-    Op.EqualTo("contentTypeId", "film"));
+    Op.EqualTo("sys.contentTypeId", "film"));
 
-// Set the paging options
+// Set the number of entries to be returned per page
 query.PageSize = 50;
 
 // Get the 2nd result set
@@ -112,7 +112,7 @@ query.PageIndex = 1;
 
 System fields such as id, contentTypeId, projectId, versionNo etc. are under the *sys* object and can be accessed using a dot notation, e.g. sys.id, sys.contentTypeId, sys.projectId, sys.version.versionNo.
 
-The *entryTitle* field is a dynamic value, determined by the *EntryTitleField* value in the content type.
+The *entryTitle* and *entryDescription* fields are dynamic values, determined by the *EntryTitleField* and *entryDescriptionField* values in the content type.
 
 ### Data fields
 

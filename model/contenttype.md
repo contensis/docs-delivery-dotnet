@@ -8,10 +8,11 @@ A content type resource can be retrieved from the Delivery API to understand the
 | Name | Type | Description |
 | :--- | :--- | :---------- |
 | Id | string | A unique content type identifier, e.g. "actor" |
-| ProjectId | string | The project identifier, e.g. "movieDb" |
+| ProjectId | string | The project identifier, e.g. "movieDb". Found in the project overview screen of the management console |
 | Name | [LocalizedValue](#localizedvalue)  | The friendly name given to a content type |
 | Description | [LocalizedValue](#localizedvalue) | The description text given to a content type |
 | EntryTitleField | string  | The id of the field which should be used as the title in entry listings |
+| EntryDescriptionField | string  | The id of the field which should be used as the description in entry listings |
 | Fields | IReadOnlyList<[Field](#field)> | A collection of fields that form the schema for an entry |
 | Enabled | bool | A flag to indicate whether the content type is enabled and allows new entries to be created based on it |
 | DefaultLanguage | string | The default [language code](/key-concepts/localization.md) for the entries based on the content type |

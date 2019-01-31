@@ -1,6 +1,7 @@
 ---
 description: Cheatsheet to provide code examples for the .Net API
 ---
+
 # API cheat sheet
 
 ## Entry data
@@ -44,7 +45,9 @@ description: Cheatsheet to provide code examples for the .Net API
 ```
 
 ### Entry - Field data
+
 These are the fields that you can set and name when you build the content type e.g.
+
 ```cs
 // Explicitly typed variables:
 
@@ -75,12 +78,15 @@ movie.Get<bool>("showOnHomepage")       // boolean
 
 
 ### HTML markup
+
 Wrap in in Html.Raw() to output as HTML
+
 ```cs
 @Html.Raw(@movie.Get("content"))
 ```
 
 ### Quote
+
 ```cs
 @{
     // Get the field value as a Quote instance.
@@ -93,6 +99,7 @@ Wrap in in Html.Raw() to output as HTML
 ```
 
 ### List
+
 ```cs
 // Single selection list item
 <p>@movie.Get("list")</p>
@@ -143,9 +150,10 @@ Wrap in in Html.Raw() to output as HTML
     </ul>
 }
 
-
 ```
+
 ### Location
+
 ```cs
 @using Zengenti.Contensis.Delivery;
 
@@ -198,10 +206,11 @@ Wrap in in Html.Raw() to output as HTML
 ```
 
 ### Boolean
+
 ```cs
 @{
     var showOnHome = movie.Get<bool>("showOnHomepage");
-    
+
     if(showOnHome == true)
     {
         <p>Yay! the entry will appear on the homepage!</p>
@@ -210,18 +219,20 @@ Wrap in in Html.Raw() to output as HTML
 ```
 
 ## Assets - getting a file (e.g. PDF) from an entry
+
 PDFs, zip, and other file types in entries are just links to an entry with a type of "asset" - you need to get the asset first, then access its fields.
 
 
 
 ### Get the linked asset
+
 ```cs
 @{
     // Get the asset instance from the entry  (single)
     var download = movie.Get<Entry>("download");
 
     // Get the asset instances from the entry  (multi)
-    List relatedDownloads = movie.Get<List<Entry>>("relatedFiles");
+    List<Entry> relatedDownloads = movie.Get<List<Entry>>("relatedFiles");
 }
 
 // Example use - single
@@ -239,6 +250,7 @@ PDFs, zip, and other file types in entries are just links to an entry with a typ
 ```
 
 ### Asset - standard properties
+
 ```cs
 @download.Id
 @download.Uri
@@ -249,12 +261,14 @@ PDFs, zip, and other file types in entries are just links to an entry with a typ
 ```
 
 ### Asset - properties
+
 ```cs
 @download.Properties.Filename
 @download.Properties.FileSize
 ```
 
 ### Asset - Version
+
 ```cs
 @download.Version.CreatedBy
 @download.Version.Created
@@ -266,17 +280,21 @@ PDFs, zip, and other file types in entries are just links to an entry with a typ
 ```
 
 ### Asset - Field data
+
 ```cs
 @download.Get("title")
 @download.Get("description")
 @download.Get("entryTitle")
+@download.Get("entryDescription")
 ```
 
 
 ## Getting an image from an entry
+
 Images in entries are links to an Image asset - you need to get the image first, then access its fields.
 
 ### Get the linked image
+
 ```cs
 @{
     // Get the image instance from the entry  
@@ -296,14 +314,17 @@ Images in entries are links to an Image asset - you need to get the image first,
 ```
 
 ### Image instance properties
+
 The instance of the image has two properties; Caption and Asset. The caption allows some text to be associated with that instance of the image (but not the image asset itself) and the asset is the link to the image.
 
 ### Image caption
+
 ```cs
 @banImg.Caption
 ```
 
 ### Image Asset - standard properties
+
 ```cs
 @banImg.Asset.Id
 @banImg.Asset.Uri
@@ -314,6 +335,7 @@ The instance of the image has two properties; Caption and Asset. The caption all
 ```
 
 ### Image Asset - properties
+
 ```cs
 @banImg.Asset.Properties.Filename
 @banImg.Asset.Properties.FileSize
@@ -323,6 +345,7 @@ The instance of the image has two properties; Caption and Asset. The caption all
 ```
 
 ### Image Asset - Version
+
 ```cs
 @banImg.Asset.Version.CreatedBy
 @banImg.Asset.Version.Created
@@ -334,12 +357,15 @@ The instance of the image has two properties; Caption and Asset. The caption all
 ```
 
 ### Image Asset - Field data
+
 As per a standard asset but with an alt text field.
+
 ```cs
 @banImg.Asset.Get("title")
 @banImg.Asset.Get("description")
 @banImg.Asset.Get("altText")
 @banImg.Asset.Get("entryTitle")
+@banImg.Asset.Get("entryDescription")
 ```
 
 ## Composer
@@ -389,7 +415,7 @@ As per a standard asset but with an alt text field.
 
 ## Components
 
-```cs 
+```cs
 // Get the component as a dynamic object
 dynamic banner = movie.Get("banner");
 
@@ -404,12 +430,14 @@ dynamic banner = movie.Get("banner");
 ```
 
 ## Repeating fields
-Repeating fields are just arrays of items that can be looped through
+
+Repeating fields are just arrays of items that can be looped through.
+
 ```cs
 @{
-    // get multiple text fields    
+    // get multiple text fields
     var multiText = movie.Get<List<string>>("text");
-    
+
     if(multiText.Count > 0)
     {
         <ul>
@@ -425,7 +453,7 @@ Repeating fields are just arrays of items that can be looped through
 
 ## Search
 
-```cs 
+```cs
 @using Zengenti.Contensis.Delivery
 @using Zengenti.Data
 @using Zengenti.Search
@@ -448,7 +476,9 @@ Repeating fields are just arrays of items that can be looped through
 ```
 
 ## Search an object array
+
 Use [ ] to search through an object array e.g. a category taxonomy list or multiple linked entries.
+
 ```cs
 @using Zengenti.Contensis.Delivery
 @using Zengenti.Data

@@ -19,18 +19,18 @@ var client = ContensisClient.Create();
 
 ### Connecting to a different project
 
-Connecting to a different project is useful if there is a shared resources project.
+Connecting to a different project is useful if there is a shared resources project. The projectID can be found in the project overview screen in the management console.
 
 ```cs
-var sharedResourcesClient = ContensisClient.Create("{projectId}");
+var sharedResourcesClient = ContensisClient.Create("PUT_PROJECT_ID_HERE");
 ```
 
-### Connecting from a non-Contensis website.
+### Connecting from a non-Contensis website
 
-Creating a client from outside a Contensis website
+Creating a client from outside a Contensis website.
 
 ```cs
-var client = ContensisClient.Create("{projectId}", "http://cms.contensis.com", "{client_id}", "{shared_secret}", versionStatus = VersionStatus.Latest);
+var client = ContensisClient.Create("PUT_PROJECT_ID_HERE", "http://cms.contensis.com", "PUT_CLIENT_ID_HERE", "PUT_SHARED_SECRET_HERE", versionStatus = VersionStatus.Latest);
 ```
 
 ## Default configuration
@@ -43,7 +43,7 @@ The default configuration becomes effective for all ContensisClient instantiatio
 
 This is a useful feature for websites that are created using a .NET based framework such as NancyFx or Asp.net MVC.
 
-The client ID and shared secret are obtained from [API key management](https://zenhub.zengenti.com/Contensis/9/kb/content-types-and-entries/api-keys/api-key-overview.aspx). They can then be used to call the security service to obtain a claims-based bearer token, and to validate that the user can access resources from the service.
+The client ID and shared secret are obtained from [API key management](https://zenhub.zengenti.com/Contensis/11.3/kb/content-types-and-entries/api-keys/api-key-overview.aspx). They can then be used to call the security service to obtain a claims-based bearer token, and to validate that the user can access resources from the service.
 
 
 ### API initialisation example
