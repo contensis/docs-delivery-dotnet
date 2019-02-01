@@ -1,22 +1,22 @@
 ---
-description: Requesting a node can be achieved by using one of the Get method overloads.
+description: Requesting a node can be achieved by using one of the following Get method overloads.
 ---
 # Getting nodes
 
 Requesting [nodes](/model/node.md) can be achieved by using one of the `Get` methods.
 
-- [GetRoot(string language, int depth](#get-root)
-- [GetRootAsync(string language, int depth](#get-root-async)
-- [GetById(Guid id, string language, int depth](#get-by-guid-id)
-- [GetByIdAsync(Guid id, string language, int depth](#get-by-guid-id-async)
-- [GetById(string id, string language, int depth](#get-by-string-id)
-- [GetByIdAsync(string id, string language, int depth](#get-by-string-id-async)
-- [GetByPath(string path, int depth](#get-by-path)
-- [GetByPathAsync(string id, int depth](#get-by-path-async)
-- [GetByEntryId(Guid entryId, string language](#get-by-guid-entry-id)
-- [GetByEntryIdAsync(Guid entryId string language](#get-by-guid-entry-id-async)
-- [GetByEntryId(string entryId, string language](#get-by-string-entry-id)
-- [GetByEntryIdAsync(string entryId string language](#get-by-string-entry-id-async)
+- [GetRoot(string language, int depth)](#get-root)
+- [GetRootAsync(string language, int depth)](#get-root-async)
+- [GetById(Guid id, string language, int depth)](#get-by-guid-id)
+- [GetByIdAsync(Guid id, string language, int depth)](#get-by-guid-id-async)
+- [GetById(string id, string language, int depth)](#get-by-string-id)
+- [GetByIdAsync(string id, string language, int depth)](#get-by-string-id-async)
+- [GetByPath(string path, int depth)](#get-by-path)
+- [GetByPathAsync(string id, int depth)](#get-by-path-async)
+- [GetByEntryId(Guid entryId, string language)](#get-by-guid-entry-id)
+- [GetByEntryIdAsync(Guid entryId string language)](#get-by-guid-entry-id-async)
+- [GetByEntryId(string entryId, string language)](#get-by-string-entry-id)
+- [GetByEntryIdAsync(string entryId string language)](#get-by-string-entry-id-async)
 
 ## Get root
 

@@ -25,3 +25,4 @@ The documentation is mainly example-driven with API references to the types.
 - [Getting an Entry](/key-concepts/entry-get.md)
 - [Listing Entries](/key-concepts/entries-list.md)
 - [Searching for Entries](/search/entry-search.md)
+- [Getting nodes](/key-concepts/node-get.md)
