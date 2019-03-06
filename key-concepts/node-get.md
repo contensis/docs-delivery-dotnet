@@ -470,7 +470,7 @@ Gets all nodes that have the specified entry assigned asynchronously
 ### Syntax
 
 ```cs
-public async Task<IReadonlyList<Node>> GetByEntryIdAsync(string entryId, int depth = 0)
+public async Task<IReadonlyList<Node>> GetByEntryIdAsync(string entryId, string language = null)
 {
 }
 ```
