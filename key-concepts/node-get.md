@@ -38,7 +38,7 @@ public Node GetRoot(string language = null, int depth = 0)
 
 *depth*
 > Type: `int`  
-> The depth of decendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 
 ### Examples
@@ -75,7 +75,7 @@ public async Task<Node> GetRootAsync(string language = null, int depth = 0)
 
 *depth*
 > Type: `int`  
-> The depth of decendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 ### Examples
 
@@ -115,7 +115,7 @@ public Node GetById(Guid id, string language = null, int depth = 0)
 
 *depth*
 > Type: `int`  
-> The depth of decendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 ### Remarks
 
@@ -161,7 +161,7 @@ public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth 
 
 *depth*
 > Type: `int`  
-> The depth of decendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 ### Remarks
 
@@ -207,7 +207,7 @@ public Node GetById(string id, string language = null, int depth = 0)
 
 *depth*
 > Type: `int`  
-> The depth of decendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 ### Remarks
 
@@ -253,7 +253,7 @@ public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth 
 
 *depth*
 > Type: `int`  
-> The depth of decendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 ### Remarks
 
@@ -295,7 +295,7 @@ public Node GetByPath(string path, int depth = 0)
 
 *depth*
 > Type: `int`  
-> The depth of decendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 ### Remarks
 
@@ -335,7 +335,7 @@ public async Task<Node> GetByPathAsync(string path, int depth = 0)
 
 *depth*
 > Type: `int`
-> The depth of decendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 ### Remarks
 
