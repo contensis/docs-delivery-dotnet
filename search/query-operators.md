@@ -1,5 +1,22 @@
 # Query operators
 
+- [And](#and)
+- [Or](#or)
+- [Not](#not)
+- [Between](#between)
+- [Contains](#contains)
+- [EndsWith](#endswith)
+- [EqualTo](#equalto)
+- [Exists](#exists)
+- [FreeText](#freetext)
+- [GreaterThan](#greaterthan)
+- [GreaterThanOrEqualTo](#greaterthanorequalto)
+- [In](#in)
+- [LessThan](#lessthan)
+- [LessThanOrEqualTo](#lessthanorequalto)
+- [StartsWith](#startswith)
+- [DistanceWithin](#distancewithin)
+
 ## Logical Operators
 
 ### And
@@ -167,5 +184,14 @@ In the example if the *name* field contains a value starting with *war* it would
 ```cs
 var query = new Query(
     Op.StartsWith("name", "war")
+);
+```
+
+### DistanceWithin
+In the example any locations within a 10 mile radius of the specified location would match.
+
+```cs
+var query = new Query(
+    Op.DistanceWithin("location", 52.377, -2.749, "10mi")
 );
 ```
