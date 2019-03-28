@@ -68,6 +68,35 @@ var query = new Query(
 );
 ```
 
+## Location searches
+
+ Search for locations within a radius of a specified location.
+
+ ### Supported distance units
+
+ | Unit          | Search value                   |
+|---------------|--------------------------------|
+| Mile          | `mi` or `miles`                |
+| Yard          | `yd` or `yards`                |
+| Feet          | `ft` or `feet`                 |
+| Inch          | `in` or `inch`                 |
+| Kilometer     | `km` or `kilometers`           |
+| Meter         | `m` or `meters`                |
+| Centimeter    | `cm` or `centimeters`          |
+| Millimeter    | `mm` or `millimeters`          |
+| Nautical mile | `NM`, `nmi` or `nauticalmiles` |
+
+ ### Example
+
+ Find all entries which have a location within 10.5 miles of Ludlow Castle's location.
+Append the search value at the end of the distance specified, so for example "10.5mi" or "10.5miles".
+
+ ```cs
+var query = new Query(
+    Op.DistanceWithin("location", 52.36700505, -2.72304296, "10.5mi"))
+);
+```
+
 ## Ordering
 
 Results can be ordered by one or more fields in an ascending or descending direction. Order clauses are prioritised in the order that they are added. By default, if no order clauses are specified then the entry results are ordered by the EntryTitle in an ascending direction.
