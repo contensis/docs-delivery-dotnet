@@ -20,6 +20,7 @@ The `PagedList` properties provide the information required to implement paging.
 
 ```cs
 @using System.Web;
+@using Zengenti.Data;
 @using Zengenti.Contensis.Delivery;
 
 @{
