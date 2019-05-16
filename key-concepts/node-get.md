@@ -98,7 +98,8 @@ Gets a node by its identifier as a `Guid`.
 ### Syntax
 
 ```cs
-public Node GetById(Guid id, string language = null, int depth = 0)
+public Node GetById(Guid id, string language = null, int depth = 0,
+    IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -116,6 +117,14 @@ public Node GetById(Guid id, string language = null, int depth = 0)
 *depth*
 > Type: `int`  
 > The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+
+*entryFields*
+> Type: `IList&lt;string&gt;`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Remarks
 
@@ -144,7 +153,8 @@ Gets a node by its identifier as a `Guid` asynchronously.
 ### Syntax
 
 ```cs
-public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth = 0)
+public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth = 0,
+    IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -162,6 +172,14 @@ public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth 
 *depth*
 > Type: `int`  
 > The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+
+*entryFields*
+> Type: `IList&lt;string&gt;`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Remarks
 
@@ -254,6 +272,14 @@ public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth 
 *depth*
 > Type: `int`  
 > The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+
+*entryFields*
+> Type: `IList&lt;string&gt;`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Remarks
 
