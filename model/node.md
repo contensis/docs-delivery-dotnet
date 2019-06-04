@@ -12,7 +12,7 @@ A Node represents a location within the navigational structure of a website. The
 | :--- | :--- | :---------- |
 | Id | `GUID` | The node identifier |
 | ProjectId | `string` | The API identifer of the project the node belongs to |
-| Title | `string` | The node title |
+| DisplayName | `string` | The node display name |
 | Slug | `string` | The node slug |
 | Path | `string` | The node path, e.g. "/movies/action/taken" |
 | ParentId | `GUID?` | The parent node identifier. If the node is the root node then it will be _null_ |
