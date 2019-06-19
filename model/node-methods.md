@@ -7,10 +7,20 @@ Gets the child nodes for the current node.
 ### Syntax
 
 ```cs
-public IReadonlyList<Node> Children()
+public IReadonlyList<Node> Children(IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
+
+### Parameters
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Example
 
@@ -28,10 +38,20 @@ Gets the child nodes for the current node asynchronously.
 ### Syntax
 
 ```cs
-public Task<IReadonlyList<Node>> ChildrenAsync()
+public Task<IReadonlyList<Node>> ChildrenAsync(IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
+
+### Parameters
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Example
 

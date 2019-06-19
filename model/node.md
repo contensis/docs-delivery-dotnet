@@ -24,8 +24,8 @@ A Node represents a location within the navigational structure of a website. The
 
 | Method | Returns | Description |
 | :----- | :------ | :-----------|
-| [Children()](/model/node-methods.md#children) | `IReadOnlyList<Node>`| Gets a readonly list of the child nodes |
-| [ChildrenAsync()](/model/node-methods.md#childrenasync) | `IReadOnlyList<Node>`| Gets a readonly list of the child nodes asynchronously |
+| [Children(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#children) | `IReadOnlyList<Node>`| Gets a readonly list of the child nodes |
+| [ChildrenAsync(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#childrenasync) | `IReadOnlyList<Node>`| Gets a readonly list of the child nodes asynchronously |
 | [Parent()](/model/node-methods.md#parent) | Node | Get the parent node. If the node is the root node then it will be `null` |
 | [ParentAsync()](/model/node-methods.md#parentasync) | Node | Gets the parent node asynchronously. If the node is the root node then it will be `null` |
 | [AncestorAtLevel(int level)](/model/node-methods.md#ancestoratlevel) | Node | Gets an ancestor node at the specified level
