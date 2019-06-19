@@ -26,8 +26,8 @@ A Node represents a location within the navigational structure of a website. The
 | :----- | :------ | :-----------|
 | [Children(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#children) | `IReadOnlyList<Node>`| Gets a readonly list of the child nodes |
 | [ChildrenAsync(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#childrenasync) | `IReadOnlyList<Node>`| Gets a readonly list of the child nodes asynchronously |
-| [Parent()](/model/node-methods.md#parent) | Node | Get the parent node. If the node is the root node then it will be `null` |
-| [ParentAsync()](/model/node-methods.md#parentasync) | Node | Gets the parent node asynchronously. If the node is the root node then it will be `null` |
+| [Parent(int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#parent) | Node | Get the parent node. If the node is the root node then it will be `null` |
+| [ParentAsync(int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#parentasync) | Node | Gets the parent node asynchronously. If the node is the root node then it will be `null` |
 | [AncestorAtLevel(int level)](/model/node-methods.md#ancestoratlevel) | Node | Gets an ancestor node at the specified level
 | [AncestorAtLevelAsync(int level)](/model/node-methods.md#ancestoratlevelasync) | Node | Gets an ancestor node at the specified level asynchronously |
 | [Ancestors(int startLevel)](/model/node-methods.md#ancestors) | IReadonlyList&lt;Node&gt; | Gets a list of ancestor nodes |

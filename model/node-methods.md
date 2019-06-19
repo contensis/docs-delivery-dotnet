@@ -69,10 +69,24 @@ Gets the parent node for the current node.
 ### Syntax
 
 ```cs
-public Node Parent()
+public Node Parent(int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
+
+### Parameters
+
+*depth*
+> Type: `int`  
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Example
 
@@ -90,10 +104,24 @@ Gets the parent node for the current node asynchronously.
 ### Syntax
 
 ```cs
-public Node ParentAsync()
+public Node ParentAsync(int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
+
+### Parameters
+
+*depth*
+> Type: `int`  
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Remarks
 
