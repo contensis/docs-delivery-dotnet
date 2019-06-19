@@ -88,6 +88,10 @@ public Node Parent(int depth = 0, IList<string> entryFields = null, entryLinkDep
 > Type: `int`  
 > The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
+### Remarks
+
+Consider using ParentId if that is all is required to avoid unnecessary network calls.
+
 ### Example
 
 ```cs
@@ -125,7 +129,7 @@ public Node ParentAsync(int depth = 0, IList<string> entryFields = null, entryLi
 
 ### Remarks
 
-Consider using ParentId if that is all is required to avoid unneccessary network calls.
+Consider using ParentId if that is all is required to avoid unnecessary network calls.
 
 ### Example
 
@@ -182,7 +186,7 @@ public async Task<Node> AncestorAtLevelAsync(int level)
 ### Parameters
 
 *level*
-> Type: `integer`  
+> Type: `int`  
 > The level in the tree of the ancestor to return
 
 ### Remarks
@@ -205,7 +209,7 @@ Gets the ancestor nodes for a node with an optional start level.
 ### Syntax
 
 ```cs
-public IReadonlyList<Node> Ancestors(int startLevel = 0)
+public IReadonlyList<Node> Ancestors(int startLevel = 0, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -213,8 +217,16 @@ public IReadonlyList<Node> Ancestors(int startLevel = 0)
 ### Parameters
 
 *startLevel*
-> Type: `integer`  
+> Type: `int`  
 > The level to start returning the ancestors from
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Remarks
 
@@ -238,7 +250,7 @@ Gets the ancestor nodes for a node asynchronously with an optional start level.
 ### Syntax
 
 ```cs
-public async Task<IReadonlyList<Node>> AncestorsAsync(int startLevel = 0)
+public async Task<IReadonlyList<Node>> AncestorsAsync(int startLevel = 0, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -246,8 +258,16 @@ public async Task<IReadonlyList<Node>> AncestorsAsync(int startLevel = 0)
 ### Parameters
 
 *startLevel*
-> Type: `integer`  
+> Type: `int`  
 > The level to start returning the ancestors from
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Remarks
 
