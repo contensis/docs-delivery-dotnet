@@ -147,7 +147,7 @@ Gets the ancestor at the specified level.
 ### Syntax
 
 ```cs
-public Node AncestorAtLevel(int level)
+public Node AncestorAtLevel(int level, int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -155,8 +155,20 @@ public Node AncestorAtLevel(int level)
 ### Parameters
 
 *level*
-> Type: `integer`  
+> Type: `int`  
 > The level in the tree of the ancestor to return
+
+*depth*
+> Type: `int`  
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Remarks
 
@@ -178,7 +190,7 @@ Gets the ancestor node at the specified level.
 ### Syntax
 
 ```cs
-public async Task<Node> AncestorAtLevelAsync(int level)
+public async Task<Node> AncestorAtLevelAsync(int level, int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -188,6 +200,18 @@ public async Task<Node> AncestorAtLevelAsync(int level)
 *level*
 > Type: `int`  
 > The level in the tree of the ancestor to return
+
+*depth*
+> Type: `int`  
+> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Remarks
 
