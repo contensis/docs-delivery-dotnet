@@ -315,10 +315,20 @@ Gets the sibling nodes for a node including the current node.
 ### Syntax
 
 ```cs
-public IReadonlyList<Node>> Siblings()
+public IReadonlyList<Node>> Siblings(IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
+
+### Parameters
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Example
 
@@ -336,10 +346,20 @@ Gets the sibling nodes for a node asynchronously including the current node.
 ### Syntax
 
 ```cs
-public async Task<IReadonlyList<Node>> SiblingsAsync()
+public async Task<IReadonlyList<Node>> SiblingsAsync(IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
+
+### Parameters
+
+*entryFields*
+> Type: `IList<string>`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*entryLinkDepth*
+> Type: `int`  
+> The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
 
 ### Example
 

@@ -32,8 +32,8 @@ A Node represents a location within the navigational structure of a website. The
 | [AncestorAtLevelAsync(int level, int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#ancestoratlevelasync) | Node | Gets an ancestor node at the specified level asynchronously |
 | [Ancestors(int startLevel, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#ancestors) | IReadonlyList&lt;Node&gt; | Gets a list of ancestor nodes |
 | [AncestorsAsync(int startLevel, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#ancestorsasync) | IReadonlyList&lt;Node&gt; | Gets a list of ancestor nodes asynchronously |
-| [Siblings()](/model/node-methods.md#siblings) | IReadonlyList&lt;Node&gt; | Gets a list of sibling nodes including the current node |
-| [SiblingsAsync()](/model/node-methods.md#siblingsasync) | IReadonlyList&lt;Node&gt; | Gets a list of sibling nodes including the current node |
+| [Siblings(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#siblings) | IReadonlyList&lt;Node&gt; | Gets a list of sibling nodes including the current node |
+| [SiblingsAsync(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#siblingsasync) | IReadonlyList&lt;Node&gt; | Gets a list of sibling nodes including the current node |
 | [Entry()](/model/node-methods.md#entry) | [Entry](/model/entry.md) | Gets the associated entry instance assigned to the node. |
 | [EntryAsync()](/model/node-methods.md#entryasync) | [Entry](/model/entry.md) | Gets the associated entry instance assigned to the node asynchronously.  |
 | [Entry&lt;T&gt;](/model/node-methods.md#entryt)  | [TypedModel](/key-concepts/typed-models.ms) of T | Gets the entry as a typed model |
