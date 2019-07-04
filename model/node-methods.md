@@ -69,16 +69,12 @@ Gets the parent node for the current node.
 ### Syntax
 
 ```cs
-public Node Parent(int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)
+public Node Parent(IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
 
 ### Parameters
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -108,16 +104,12 @@ Gets the parent node for the current node asynchronously.
 ### Syntax
 
 ```cs
-public Node ParentAsync(int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)
+public Node ParentAsync(IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
 
 ### Parameters
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -147,7 +139,7 @@ Gets the ancestor at the specified level.
 ### Syntax
 
 ```cs
-public Node AncestorAtLevel(int level, int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)
+public Node AncestorAtLevel(int level, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -157,10 +149,6 @@ public Node AncestorAtLevel(int level, int depth = 0, IList<string> entryFields 
 *level*
 > Type: `int`  
 > The level in the tree of the ancestor to return
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -190,7 +178,7 @@ Gets the ancestor node at the specified level.
 ### Syntax
 
 ```cs
-public async Task<Node> AncestorAtLevelAsync(int level, int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)
+public async Task<Node> AncestorAtLevelAsync(int level, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -200,10 +188,6 @@ public async Task<Node> AncestorAtLevelAsync(int level, int depth = 0, IList<str
 *level*
 > Type: `int`  
 > The level in the tree of the ancestor to return
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  

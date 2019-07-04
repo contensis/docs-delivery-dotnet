@@ -5,14 +5,14 @@ description: Requesting a node can be achieved by using one of the following Get
 
 Requesting [nodes](/model/node.md) can be achieved by using one of the `Get` methods.
 
-- [GetRoot(string language, int depth, IList<string> entryFields = null, entryLinkDepth = 0)](#get-root)
-- [GetRootAsync(string language, int depth, IList<string> entryFields = null, entryLinkDepth = 0)](#get-root-async)
-- [GetById(Guid id, string language, int depth, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-guid-id)
-- [GetByIdAsync(Guid id, string language, int depth, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-guid-id-async)
-- [GetById(string id, string language, int depth, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-string-id)
-- [GetByIdAsync(string id, string language, int depth, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-string-id-async)
-- [GetByPath(string path, int depth, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-path)
-- [GetByPathAsync(string id, int depth, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-path-async)
+- [GetRoot(string language, IList<string> entryFields = null, entryLinkDepth = 0)](#get-root)
+- [GetRootAsync(string language, IList<string> entryFields = null, entryLinkDepth = 0)](#get-root-async)
+- [GetById(Guid id, string language, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-guid-id)
+- [GetByIdAsync(Guid id, string language, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-guid-id-async)
+- [GetById(string id, string language, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-string-id)
+- [GetByIdAsync(string id, string language, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-string-id-async)
+- [GetByPath(string path, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-path)
+- [GetByPathAsync(string id, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-path-async)
 - [GetByEntryId(Guid entryId, string language, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-guid-entry-id)
 - [GetByEntryIdAsync(Guid entryId string language, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-guid-entry-id-async)
 - [GetByEntryId(string entryId, string language, IList<string> entryFields = null, entryLinkDepth = 0)](#get-by-string-entry-id)
@@ -29,8 +29,7 @@ Gets the root node of the tree.
 ### Syntax
 
 ```cs
-public Node GetRoot(string language = null, int depth = 0,
-    IList<string> entryFields = null, entryLinkDepth = 0)
+public Node GetRoot(string language = null, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -40,10 +39,6 @@ public Node GetRoot(string language = null, int depth = 0,
 *language*
 > Type: `string`  
 > The specified language for the node. If no value is provided then the project default language is used.
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -75,8 +70,7 @@ Gets the root node of the tree asynchronously.
 ### Syntax
 
 ```cs
-public async Task<Node> GetRootAsync(string language = null, int depth = 0,
-    IList<string> entryFields = null, entryLinkDepth = 0)
+public async Task<Node> GetRootAsync(string language = null, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -86,10 +80,6 @@ public async Task<Node> GetRootAsync(string language = null, int depth = 0,
 *language*
 > Type: `string`  
 > The specified language for the node. If no value is provided then the project default language is used.
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -120,8 +110,7 @@ Gets a node by its identifier as a `Guid`.
 ### Syntax
 
 ```cs
-public Node GetById(Guid id, string language = null, int depth = 0,
-    IList<string> entryFields = null, entryLinkDepth = 0)
+public Node GetById(Guid id, string language = null, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -135,10 +124,6 @@ public Node GetById(Guid id, string language = null, int depth = 0,
 *language*
 > Type: `string`  
 > The specified language for the node. If no value is provided then the project default language is used.
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -160,8 +145,8 @@ using Zengenti.Contensis.Delivery;
 // Create a client
 var client = ContensisClient.Create();
 
-// Get a specific German node by id, including descendants up to a depth of 3
-Node navNode = client.Nodes.GetById(rootNavNodeId, language: "de", depth: 3);
+// Get a specific German node by id
+Node navNode = client.Nodes.GetById(rootNavNodeId, language: "de");
 
 // We can now create navigation components by looping through the nodes...
 ```
@@ -175,8 +160,7 @@ Gets a node by its identifier as a `Guid` asynchronously.
 ### Syntax
 
 ```cs
-public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth = 0,
-    IList<string> entryFields = null, entryLinkDepth = 0)
+public async Task<Node> GetByIdAsync(Guid id, string language = null, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -191,10 +175,6 @@ public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth 
 > Type: `string`  
 > The specified language for the node. If no value is provided then the project default language is used.
 
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
-
 *entryFields*
 > Type: `IList<string>`  
 > The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
@@ -215,8 +195,8 @@ using Zengenti.Contensis.Delivery;
 // Create a client
 var client = ContensisClient.Create();
 
-// Get a specific German node by id, including descendants up to a depth of 3
-Node navNode = await client.Nodes.GetByIdAsync(rootNavNodeId, language: "de", depth: 3);
+// Get a specific German node by id
+Node navNode = await client.Nodes.GetByIdAsync(rootNavNodeId, language: "de");
 
 // We can now create navigation components by looping through the nodes...
 ```
@@ -230,8 +210,7 @@ Gets a node by its identifier as a `string`.
 ### Syntax
 
 ```cs
-public Node GetById(string id, string language = null, int depth = 0,
-    IList<string> entryFields = null, entryLinkDepth = 0)
+public Node GetById(string id, string language = null, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -245,10 +224,6 @@ public Node GetById(string id, string language = null, int depth = 0,
 *language*
 > Type: `string`  
 > The specified language for the node. If no value is provided then the project default language is used.
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -270,8 +245,8 @@ using Zengenti.Contensis.Delivery;
 // Create a client
 var client = ContensisClient.Create();
 
-// Get a specific German node by id, including descendants up to a depth of 3
-Node navNode = client.Nodes.GetById("7ee53da5-6405-4fb5-80d4-b2752038134d", language: "de", depth: 3);
+// Get a specific German node by id
+Node navNode = client.Nodes.GetById("7ee53da5-6405-4fb5-80d4-b2752038134d", language: "de");
 
 // We can now create navigation components by looping through the nodes...
 ```
@@ -285,8 +260,7 @@ Gets a node by its identifier as a `string` asynchronously.
 ### Syntax
 
 ```cs
-public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth = 0,
-    IList<string> entryFields = null, entryLinkDepth = 0)
+public async Task<Node> GetByIdAsync(Guid id, string language = null, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -300,10 +274,6 @@ public async Task<Node> GetByIdAsync(Guid id, string language = null, int depth 
 *language*
 > Type: `string`  
 > The specified language for the node. If no value is provided then the project default language is used.
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -325,8 +295,8 @@ using Zengenti.Contensis.Delivery;
 // Create a client
 var client = ContensisClient.Create();
 
-// Get a specific German node by id, including descendants up to a depth of 3
-Node navNode = await client.Nodes.GetByIdAsync("7ee53da5-6405-4fb5-80d4-b2752038134d", language: "de", depth: 3);
+// Get a specific German node by id
+Node navNode = await client.Nodes.GetByIdAsync("7ee53da5-6405-4fb5-80d4-b2752038134d", language: "de");
 
 // We can now create navigation components by looping through the nodes...
 ```
@@ -340,8 +310,7 @@ Gets a node by path.
 ### Syntax
 
 ```cs
-public Node GetByPath(string path, int depth = 0,
-    IList<string> entryFields = null, entryLinkDepth = 0)
+public Node GetByPath(string path, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -351,10 +320,6 @@ public Node GetByPath(string path, int depth = 0,
 *path*
 > Type: `string`  
 > The path to the node.
-
-*depth*
-> Type: `int`  
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -389,8 +354,7 @@ Gets a node by path asynchronously.
 ### Syntax
 
 ```cs
-public async Task<Node> GetByPathAsync(string path, int depth = 0,
-    IList<string> entryFields = null, entryLinkDepth = 0)
+public async Task<Node> GetByPathAsync(string path, IList<string> entryFields = null, entryLinkDepth = 0)
 {
 }
 ```
@@ -400,10 +364,6 @@ public async Task<Node> GetByPathAsync(string path, int depth = 0,
 *path*
 > Type: `string`
 > The path to the node.
-
-*depth*
-> Type: `int`
-> The depth of descendants to include for the node, to a maximum overall depth of 9. The default is 0. This reduces calls to the HTTP service and improves performance.
 
 *entryFields*
 > Type: `IList<string>`  
@@ -608,15 +568,6 @@ var client = ContensisClient.Create();
 // Get all nodes with the entry assigned
 IReadonly<Node> nodes = await client.Nodes.GetByEntryIdAsync("ccd00f54-8c6a-4ea8-88ab-93cda601c181");
 ```
-
-
-
-
-
-
-
-
-
 
 ---
 

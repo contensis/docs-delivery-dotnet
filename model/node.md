@@ -13,12 +13,12 @@ A Node represents a location within the navigational structure of a website. The
 | Id | `GUID` | The node identifier |
 | ProjectId | `string` | The API identifer of the project the node belongs to |
 | DisplayName | `string` | The node display name |
-| Slug | `string` | The node slug |
 | Path | `string` | The node path, e.g. "/movies/action/taken" |
 | ParentId | `GUID?` | The parent node identifier. If the node is the root node then it will be _null_ |
 | Language | `string` | The language the node represents |
 | EntryId | `GUID?` | The optionally assigned entry identifier |
 | ChildCount | `int` | The count of child nodes |
+| IsCanonical | bool |  |
 
 ## Methods
 
@@ -26,10 +26,10 @@ A Node represents a location within the navigational structure of a website. The
 | :----- | :------ | :-----------|
 | [Children(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#children) | `IReadOnlyList<Node>`| Gets a readonly list of the child nodes |
 | [ChildrenAsync(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#childrenasync) | `IReadOnlyList<Node>`| Gets a readonly list of the child nodes asynchronously |
-| [Parent(int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#parent) | Node | Get the parent node. If the node is the root node then it will be `null` |
-| [ParentAsync(int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#parentasync) | Node | Gets the parent node asynchronously. If the node is the root node then it will be `null` |
-| [AncestorAtLevel(int level, int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#ancestoratlevel) | Node | Gets an ancestor node at the specified level
-| [AncestorAtLevelAsync(int level, int depth = 0, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#ancestoratlevelasync) | Node | Gets an ancestor node at the specified level asynchronously |
+| [Parent(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#parent) | Node | Get the parent node. If the node is the root node then it will be `null` |
+| [ParentAsync(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#parentasync) | Node | Gets the parent node asynchronously. If the node is the root node then it will be `null` |
+| [AncestorAtLevel(int level, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#ancestoratlevel) | Node | Gets an ancestor node at the specified level
+| [AncestorAtLevelAsync(int level, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#ancestoratlevelasync) | Node | Gets an ancestor node at the specified level asynchronously |
 | [Ancestors(int startLevel, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#ancestors) | IReadonlyList&lt;Node&gt; | Gets a list of ancestor nodes |
 | [AncestorsAsync(int startLevel, IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#ancestorsasync) | IReadonlyList&lt;Node&gt; | Gets a list of ancestor nodes asynchronously |
 | [Siblings(IList<string> entryFields = null, entryLinkDepth = 0)](/model/node-methods.md#siblings) | IReadonlyList&lt;Node&gt; | Gets a list of sibling nodes including the current node |
