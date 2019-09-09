@@ -3,7 +3,7 @@ description: Taxonomy nodes can be retrieved using the key or path methods.
 ---
 # Taxonomy
 
-Taxonomy nodes can be retrieved using the following methods, either by key or by path. The localization can be included as a parameter to determine the language the nodes should be returned as. The order by default is set to 'Defined', which is the order set in the UI, but an order of 'Alphabetical' can also be set. 
+Taxonomy nodes can be retrieved using the following methods, either by key or by path. The localization can be included as a parameter to determine the language the nodes should be returned as. The order by default is set to 'Alphabetical', but an order of 'Defined' (which is the order set in the UI) can also be used. 
 
 The childDepth parameter is used to reduce the number of service calls if child and descendant nodes are being iterated, which will potentially increase performance.
 
@@ -19,7 +19,7 @@ Gets a [TaxonomyNode](/model/taxonomynode.md) instance by it's key.
 ### Syntax
 
 ```cs
-public TaxonomyNode GetNodeByKey(string key, string language = null, int childDepth = 0, TaxonomyNodeOrder order = TaxonomyNodeOrder.Defined)
+public TaxonomyNode GetNodeByKey(string key, string language = null, int childDepth = 0, TaxonomyNodeOrder order = TaxonomyNodeOrder.Alphabetical)
 {
 }
 ```
@@ -58,8 +58,8 @@ TaxonomyNode genreNode = client.Taxonomy.GetNodeByKey("0/12/543");
 // Get a specific taxonomy for French and include childs nodes to a depth of 2
 TaxonomyNode genreNode = client.Taxonomy.GetNodeByKey("0/12/543", "fr-FR", 2);
 
-// Order the node alphabetically
-TaxonomyNode genreNode = client.Taxonomy.GetNodeByKey("0/12/543", order: TaxonomyNodeOrder.Alphabetical);
+// Order the node in Defined order
+TaxonomyNode genreNode = client.Taxonomy.GetNodeByKey("0/12/543", order: TaxonomyNodeOrder.Defined);
 ```
 
 ---
@@ -71,7 +71,7 @@ Gets a [TaxonomyNode](/model/taxonomynode.md) instance by it's key asynchronousl
 ### Syntax
 
 ```cs
-public asnyc Task<TaxonomyNode> GetNodeByKeyAsync(string key, string language = null, int childDepth = 0, TaxonomyNodeOrder order = TaxonomyNodeOrder.Defined)
+public asnyc Task<TaxonomyNode> GetNodeByKeyAsync(string key, string language = null, int childDepth = 0, TaxonomyNodeOrder order = TaxonomyNodeOrder.Alphabetical)
 {
 }
 ```
@@ -80,7 +80,7 @@ public asnyc Task<TaxonomyNode> GetNodeByKeyAsync(string key, string language = 
 
 *key*
 > Type: `string`  
-> The key for the taxonomy, which is a forward-slash delimitered set of integer values, e.g. 0/2/734 
+> The key for the taxonomy, which is a forward-slash delimited set of integer values, e.g. 0/2/734 
 
 *language*
 > Type: `string`  
@@ -110,8 +110,8 @@ TaxonomyNode genreNode = await client.Taxonomy.GetNodeByKeyAsync("0/12/543");
 // Get a specific taxonomy for French and include childs nodes to a depth of 2
 TaxonomyNode genreNode = await client.Taxonomy.GetNodeByKeyAsync("0/12/543", "fr-FR", 2);
 
-// Order the node alphabetically
-TaxonomyNode genreNode = await client.Taxonomy.GetNodeByKeyAsync("0/12/543", order: TaxonomyNodeOrder.Alphabetical);
+// Order the node in Defined order
+TaxonomyNode genreNode = await client.Taxonomy.GetNodeByKeyAsync("0/12/543", order: TaxonomyNodeOrder.Defined);
 ```
 
 ## GetNodeByPath
@@ -121,7 +121,7 @@ Gets a [TaxonomyNode](/model/taxonomynode.md) instance by it's path.
 ### Syntax
 
 ```cs
-public TaxonomyNode GetNodeByPath(string path, string language = null, int childDepth = 0, TaxonomyNodeOrder order = TaxonomyNodeOrder.Defined)
+public TaxonomyNode GetNodeByPath(string path, string language = null, int childDepth = 0, TaxonomyNodeOrder order = TaxonomyNodeOrder.Alphabetical)
 {
 }
 ```
@@ -130,7 +130,7 @@ public TaxonomyNode GetNodeByPath(string path, string language = null, int child
 
 *path*
 > Type: `string`  
-> The path for the taxonomy, which is a forward-slash delimitered set of string values, e.g. "Root/Movies/Genres/Comedy" 
+> The path for the taxonomy, which is a forward-slash delimited set of string values, e.g. "Root/Movies/Genres/Comedy" 
 
 *language*
 > Type: `string`  
@@ -160,8 +160,8 @@ TaxonomyNode genreNode = client.Taxonomy.GetNodeByPath("Root/movies/genre");
 // Get a specific taxonomy for French and include childs nodes to a depth of 2
 TaxonomyNode genreNode = client.Taxonomy.GetNodeByPath("Root/movies/genre", "fr-FR", 2);
 
-// Order the node alphabetically
-TaxonomyNode genreNode = client.Taxonomy.GetNodeByPath("Root/movies/genre", order: TaxonomyNodeOrder.Alphabetical);
+// Order the node in Defined order
+TaxonomyNode genreNode = client.Taxonomy.GetNodeByPath("Root/movies/genre", order: TaxonomyNodeOrder.Defined);
 ```
 
 ---
@@ -174,7 +174,7 @@ Gets a [TaxonomyNode](/model/taxonomynode.md) instance by it's path asynchronous
 ### Syntax
 
 ```cs
-public asnyc Task<TaxonomyNode> GetNodeByPathAsync(string path, string language = null, int childDepth = 0, TaxonomyNodeOrder order = TaxonomyNodeOrder.Defined)
+public asnyc Task<TaxonomyNode> GetNodeByPathAsync(string path, string language = null, int childDepth = 0, TaxonomyNodeOrder order = TaxonomyNodeOrder.Alphabetical)
 {
 }
 ```
@@ -183,7 +183,7 @@ public asnyc Task<TaxonomyNode> GetNodeByPathAsync(string path, string language 
 
 *path*
 > Type: `string`  
-> The path for the taxonomy, which is a forward-slash delimitered set of string values, e.g. "Root/Movies/Genres/Comedy" 
+> The path for the taxonomy, which is a forward-slash delimited set of string values, e.g. "Root/Movies/Genres/Comedy" 
 
 *language*
 > Type: `string`  
@@ -213,8 +213,8 @@ TaxonomyNode genreNode = await client.Taxonomy.GetNodeByPathAsync("Root/movies/g
 // Get a specific taxonomy for French and include childs nodes to a depth of 2
 TaxonomyNode genreNode = await client.Taxonomy.GetNodeByPathAsync("Root/movies/genre", "fr-FR", 2);
 
-// Order the node alphabetically
-TaxonomyNode genreNode = await client.Taxonomy.GetNodeByKeyAsync("Root/movies/genre", order: TaxonomyNodeOrder.Alphabetical);
+// Order the node in Defined order
+TaxonomyNode genreNode = await client.Taxonomy.GetNodeByKeyAsync("Root/movies/genre", order: TaxonomyNodeOrder.Defined);
 ```
 
 ---
