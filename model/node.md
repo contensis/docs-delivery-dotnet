@@ -19,6 +19,7 @@ A Node represents a location within the navigational structure of a website. The
 | EntryId | `GUID?` | The optionally assigned entry identifier |
 | ChildCount | `int` | The count of child nodes |
 | IsCanonical | bool |  |
+| Version     | `VersionInfo` | |
 
 ## Methods
 
