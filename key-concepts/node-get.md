@@ -310,7 +310,7 @@ Gets a node by path.
 ### Syntax
 
 ```cs
-public Node GetByPath(string path, IList<string> entryFields = null, entryLinkDepth = 0)
+public Node GetByPath(string path, IList<string> entryFields = null, entryLinkDepth = 0, bool allowPartialMatch = false)
 {
 }
 ```
@@ -328,6 +328,10 @@ public Node GetByPath(string path, IList<string> entryFields = null, entryLinkDe
 *entryLinkDepth*
 > Type: `int`  
 > The fields to include for the entry (if attached) and any of it's linked entries if an entryLinkDepth value is included.
+
+*allowPartialMatch*
+> Type: `bool`
+> When set to 'true', returns the nearest ancestor up to, but not including, root on the path if the node at the specified path does not exist.
 
 ### Remarks
 
