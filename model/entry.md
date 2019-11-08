@@ -22,6 +22,9 @@ These are the standard properties that all entries have. An entry can have multi
 | Metadata | Metadata | Metadata associated with the entry instance |
 | Owner | string | The id of the entry owner |
 | Slug | string | The entry slug token |
+| Uri | string | The canonical location of the entry |
+| AllUris | IList&lt;string&gt; | All the locations for the entry, including the canonical URI |
+
 ## Methods
 
 | Method | Returns | Description |
