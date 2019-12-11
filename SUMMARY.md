@@ -37,6 +37,7 @@
 * [ContensisClientConfiguration](/model/contensisclientconfiguration.md)
 * [Node](/model/node.md)
   * [Node methods](/model/node-methods.md)
+  * [NodeVersionInfo](/model/nodeversioninfo.md)
 
 ---
 
