@@ -8,19 +8,19 @@ A Node represents a location within the navigational structure of a website. The
 
 ## Properties
 
-| Name          | Type          | Description                                                                     |
-|---------------|---------------|---------------------------------------------------------------------------------|
-| Id            | `GUID`        | The node identifier                                                             |
-| ProjectId     | `string`      | The API identifer of the project the node belongs to                            |
-| DisplayName   | `string`      | The node display name                                                           |
-| Path          | `string`      | The node path, e.g. "/movies/action/taken"                                      |
-| ParentId      | `GUID?`       | The parent node identifier. If the node is the root node then it will be _null_ |
-| Language      | `string`      | The language the node represents                                                |
-| EntryId       | `GUID?`       | The optionally assigned entry identifier                                        |
-| ChildCount    | `int`         | The count of child nodes                                                        |
-| IsCanonical   | bool          | A flag to indicate whether the node is the canonical                            |
-| Version       | `VersionInfo` | The node version information                                                    |
-| IncludeInMenu | bool          | A flag that determines whether the node should be included in menus             |
+| Name          | Type              | Description                                                                     |
+|---------------|-------------------|---------------------------------------------------------------------------------|
+| Id            | `GUID`            | The node identifier                                                             |
+| ProjectId     | `string`          | The API identifer of the project the node belongs to                            |
+| DisplayName   | `string`          | The node display name                                                           |
+| Path          | `string`          | The node path, e.g. "/movies/action/taken"                                      |
+| ParentId      | `GUID?`           | The parent node identifier. If the node is the root node then it will be _null_ |
+| Language      | `string`          | The language the node represents                                                |
+| EntryId       | `GUID?`           | The optionally assigned entry identifier                                        |
+| ChildCount    | `int`             | The count of child nodes                                                        |
+| IsCanonical   | bool              | A flag to indicate whether the node is the canonical                            |
+| Version       | [`NodeVersionInfo`](/model/nodeversioninfo.md) | The node version information                                                    |
+| IncludeInMenu | bool              | A flag that determines whether the node should be included in menus             |
 
 ## Methods
 
