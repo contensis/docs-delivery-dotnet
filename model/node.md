@@ -1,5 +1,5 @@
 ---
-description: The Location class represents a geographic coordinate that specifies the position of a point on the Earth's surface.
+description: A Node represents a location within the navigational structure of a website. The linking of nodes as parent-child relationships forms the hierarchical structure of a website, with a node having a single parent and (optionally) multiple child nodes. A single entry can optionally be assigned to a node.
 ---
 
 # Node
