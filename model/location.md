@@ -8,10 +8,11 @@ The Location class represents a geographic coordinate that specifies the positio
 
 ## Properties
 
-| Name | Type | Description |
-| :--- | :--- | :---------- |
-| Lat | double | The north-south position |
-| Lon | double | The east-west position |
+| Name     | Type    | Description                                                    |
+|----------|---------|----------------------------------------------------------------|
+| Lat      | double  | The north-south position                                       |
+| Lon      | double  | The east-west position                                         |
+| Distance | double? | The distance value in the units specified in a distance search |
 
 ## Example
 
