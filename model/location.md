@@ -12,7 +12,7 @@ The Location class represents a geographic coordinate that specifies the positio
 |----------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Lat      | double  | The north-south position                                                                                                                                                         |
 | Lon      | double  | The east-west position                                                                                                                                                           |
-| Distance | double? | If this field is used for a distance search, then this property will contain the distance from the specified location in the unit speficied in the search condition (e.g. miles) |
+| Distance | double? | If a location field is used for a distance search, then this property will contain the distance from the search location to the field location in the units specified in the search condition (e.g. miles) |
 
 ## Example
 
