@@ -10,10 +10,10 @@ The EntryListOptions type defines several parameters for ordering, sorting, and 
 
 | Name | Type | Description |
 | :--- | :--- | :---------- |
-| ContentTypeId | `string` | The content type identifier to list entries by. |
-| Fields | `IList<string>` | The list of fields to return in the entries. |
-| Language | `string` | The language of entries to limit the listing to. |
-| LinkDepth | `int` | The depth to resolve linked entries to.|
-| Order | `IList<string>` | A list of fields to re-order the listing by. |
-| PageOptions | [PageOptions](/model/pageoptions.md) | The paging options for the listing. |
-| PageSize | `int` | The number of items to return. |
+| ContentTypeId | `string` | The content type identifier to list entries by |
+| Fields | `IList<string>` | The list of fields to return in the entries |
+| Language | `string` | The language of entries to limit the listing to |
+| LinkDepth | `int` | The depth to resolve linked entries to |
+| Order | `IList<string>` | A list of fields to re-order the listing by |
+| PageOptions | [PageOptions](/model/pageoptions.md) | The paging options for the listing |
+| PageSize | `int` | The number of items to return |

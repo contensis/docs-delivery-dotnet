@@ -20,8 +20,8 @@ public ContensisClientConfiguration(string rootUrl, string projectId, VersionSta
 
 | Name | Type | Description |
 | :--- | :--- | :---------- |
-| RootUrl | string | The url to the root of the Delivery API services. |
-| ProjectId | string | The project identifer, e.g. "movieDb". Found in the project overview screen of the management console. |
-| DefaultVersionStatus | VersionStatus | The default version to pass for all [Entry](/model/entry.md) requests. |
-| ClientId | string | The client id value obtained from [API key management](https://zenhub.zengenti.com/Contensis/11.2/kb/content-types-and-entries/api-keys/api-key-overview.aspx). |
-| SharedSecret | string | The shared secret value obtained from [API key management](https://zenhub.zengenti.com/Contensis/11.2/kb/content-types-and-entries/api-keys/api-key-overview.aspx). |
+| RootUrl | string | The url to the root of the Delivery API services |
+| ProjectId | string | The project identifer, e.g. "movieDb". Found in the project overview screen of the management console |
+| DefaultVersionStatus | VersionStatus | The default version to pass for all [Entry](/model/entry.md) requests |
+| ClientId | string | The client id value obtained from [API key management](https://zenhub.zengenti.com/Contensis/11.2/kb/content-types-and-entries/api-keys/api-key-overview.aspx) |
+| SharedSecret | string | The shared secret value obtained from [API key management](https://zenhub.zengenti.com/Contensis/11.2/kb/content-types-and-entries/api-keys/api-key-overview.aspx) |
