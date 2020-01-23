@@ -18,11 +18,19 @@ The methods on the *ComposedFieldItem* enable the value of the field to be retri
 
 Returns the field item value as a dynamic object.
 
+### Syntax
+
 ```cs
-public dynamic Value()
+public dynamic Value(bool autoResolve = true)
 {
 }
 ```
+
+### Parameters
+
+*autoResolve*
+> Type: string  
+> If set to `true` for a singular/list of entries, assets or images, it will automatically request the linked resource when invoked. A value of `false` should be specified if you only require the link properties such as Uri or contentTypeId and do not want the performance overhead of retrieving the entire resource. The default is `true`.
 
 ### Remarks
 
@@ -45,6 +53,8 @@ dynamic quote = composed[0].Value();
 
 Returns the field item value as `T`.
 
+### Syntax
+
 ```cs
 public T Value<T>()
 {
@@ -55,6 +65,10 @@ public T Value<T>()
 
 *T*
 > The type to attempt to cast the field data to.
+
+*autoResolve*
+> Type: string  
+> If set to `true` for a singular/list of entries, assets or images, it will automatically request the linked resource when invoked. A value of `false` should be specified if you only require the link properties such as Uri or contentTypeId and do not want the performance overhead of retrieving the entire resource. The default is `true`.
 
 ### Remarks
 

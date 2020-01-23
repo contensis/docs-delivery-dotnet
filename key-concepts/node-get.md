@@ -331,7 +331,7 @@ public Node GetByPath(string path, IList<string> entryFields = null, entryLinkDe
 
 *allowPartialMatch*
 > Type: `bool`
-> When set to 'true', returns the nearest ancestor up to, but not including, root on the path if the node at the specified path does not exist.
+> When set to *true*, returns the nearest ancestor up to, but not including, root on the path if the node at the specified path does not exist.
 
 ### Remarks
 

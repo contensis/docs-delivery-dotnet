@@ -3,7 +3,7 @@ description: An entry definition in the Delivery API contains a mixture of stand
 ---
 # Entries
 
-A full [overview of entries can be found here](https://zenhub.zengenti.com/Contensis/11.3/kb/content-types-and-entries/entries/Entries-overview.aspx).
+A full [overview of entries can be found here](https://zenhub.zengenti.com/Contensis/12.0/kb/content-types-and-entries/entries/Entries-overview.aspx).
 
 An entry definition in the Delivery API contains a mixture of standard properties and properties that have been defined by the content type that an entry is based on.
 
@@ -22,10 +22,13 @@ These are the standard properties that all entries have. An entry can have multi
 | Metadata | Metadata | Metadata associated with the entry instance |
 | Owner | string | The id of the entry owner |
 | Slug | string | The entry slug token |
+| Uri | string | The canonical location of the entry |
+| AllUris | IList&lt;string&gt; | All the locations for the entry, including the canonical URI |
+
 ## Methods
 
 | Method | Returns | Description |
 | :----- | :------ | :-----------|
-| [Get(string fieldName)](./entry-methods.html#get) | dynamic | Gets a field item by name and returns a dynamic object |
-| [Get&lt;Type&gt;(string fieldName)](./entry-methods.html#gett) | &lt;Type&gt; | Gets a field item by name and attempts to cast to the specified generic type |
+| [Get(string fieldName, bool autoResolve)](./entry-methods.html#get) | dynamic | Gets a field item by name and returns a dynamic object |
+| [Get&lt;Type&gt;(string fieldName, bool autoResolve)](./entry-methods.html#gett) | &lt;Type&gt; | Gets a field item by name and attempts to cast to the specified generic type |
 | [HasValue(string fieldName)](./entry-methods.html#hasvalue) | bool | A helper function to determine whether a field exists and has a value |

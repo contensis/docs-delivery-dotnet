@@ -19,7 +19,7 @@ A content type resource can be retrieved from the Delivery API to understand the
 | SupportedLanguages | IReadOnlyList&lt;string&gt; |  |
 | WorkflowId | string | The workflow that derived entries will  |
 | DataFormat | string | Either 'entry' or 'asset' |
-| PreviewUrl | string | The url that an example of an entry based on the content type can be viewed |
+| PreviewUrl | string | The URL where an example of an entry based on the content type can be viewed |
 | Version | [VersionInfo](/model/versioninfo.md) | Version information about the content type |
 
 ## Field
@@ -40,4 +40,4 @@ The field object is the definition of a field within an entry. The field also co
 
 ## LocalizedValue
 
-A localized value is a object that has values that are keyed by [language codes](/key-concepts/localization.md) which allows multilingual variations of a specific property.
+A localized value is an object that has values that are keyed by [language codes](/key-concepts/localization.md) which allows multilingual variations of a specific property.

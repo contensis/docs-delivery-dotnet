@@ -12,20 +12,20 @@ This guide will take you through rendering content created using the content typ
 
 ## Create a new project (optional)
 
-Projects are the home for all your content in Contensis. Either use an existing project or create a [new project](https://zenhub.zengenti.com/Contensis/11.3/kb/setup-and-configuration/Administration/Create-a-project.aspx) called MovieDB. You can use the default values for assets and languages. If you're creating a new project you'll need to setup a publishing server, [follow our guide](https://zenhub.zengenti.com/Contensis/11.3/kb/setup-and-configuration/Configuration/Setup-and-configure-a-publishing-server.aspx) to get one up and running.
+Projects are the home for all your content in Contensis. Either use an existing project or create a [new project](https://zenhub.zengenti.com/Contensis/12.0/kb/setup-and-configuration/Administration/Create-a-project.aspx) called MovieDB. You can use the default values for assets and languages. If you're creating a new project you'll need to setup a publishing server, [follow our guide](https://zenhub.zengenti.com/Contensis/12.0/kb/setup-and-configuration/Configuration/Setup-and-configure-a-publishing-server.aspx) to get one up and running.
 
 
 ## Create a movie content type
 
-You can [create a new content type](https://zenhub.zengenti.com/Contensis/11.3/kb/content-types-and-entries/content-types/create-a-content-type.aspx) using the content type builder. Create a new content type called *Movie* with the following fields.
+You can [create a new content type](https://zenhub.zengenti.com/Contensis/12.0/kb/content-types-and-entries/content-types/create-a-content-type.aspx) using the content type builder. Create a new content type called *Movie* with the following fields.
 
 | Field name | API id | Type | Description |
 | ---------- | ------ | ---- | ----------- |
-| Title | title | Text | The title of the movie. |
-| Overview | overview | Text | An overview of what the movie is about. |
-| Release Date | releaseDate | Date | The date the movie was released. |
-| Runtime | runtime | number (integer) | The runtime in minutes. |
-| Poster image | posterImage | Image | A reference to the cover image asset. |
+| Title | title | Text | The title of the movie |
+| Overview | overview | Text | An overview of what the movie is about |
+| Release Date | releaseDate | Date | The date the movie was released |
+| Runtime | runtime | Number (integer) | The runtime in minutes |
+| Poster image | posterImage | Image | A reference to the cover image asset |
 
 
 ## Create a folder
@@ -41,9 +41,9 @@ We will end up with the following folder and file structure.
 
 Now it's time to create some content!
 
-Head over to either [IMDB](http://www.imdb.com/) or [The Movie DB](https://www.themoviedb.org/) and choose 5 of your favourite movies to use, and then [create](https://zenhub.zengenti.com/Contensis/11.3/kb/content-types-and-entries/entries/Create-an-entry.aspx) a set of entries from you new content type.
+Head over to either [IMDB](http://www.imdb.com/) or [The Movie DB](https://www.themoviedb.org/) and choose 5 of your favourite movies to use, and then [create](https://zenhub.zengenti.com/Contensis/12.0/kb/content-types-and-entries/entries/Create-an-entry.aspx) a set of entries from your new content type.
 
-The content will benefit from the inclusion of images, so [upload](https://zenhub.zengenti.com/Contensis/11.3/kb/Assets-uploadable-content/Images/upload-an-image.aspx) the cover images for the movies into the images folder and link to them from your newly created entries.
+The content will benefit from the inclusion of images, so [upload](https://zenhub.zengenti.com/Contensis/12.0/kb/Assets-uploadable-content/Images/upload-an-image.aspx) the cover images for the movies into the images folder and link to them from your newly created entries.
 
 ## Create a movie listing in a razor view
 
@@ -145,4 +145,4 @@ This should output the following page when previewed.
 ![movie-listing](/images/movie-record.png)
 
 ## Summary
-We hope this demonstrates that by using a couple of basic razor views you can easily display new types of content in Contensis web site.
+We hope this demonstrates that by using a couple of basic razor views you can easily display new types of content in a Contensis web site.
