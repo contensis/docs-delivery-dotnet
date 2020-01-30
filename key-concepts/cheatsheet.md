@@ -477,7 +477,7 @@ Repeating fields are just arrays of items that can be looped through.
 
 ## Search an object array
 
-Use [ ] to search through an object array e.g. a category taxonomy list or multiple linked entries.
+There are no special requirements when searching through an object array, it uses the standard dot notation e.g. a category taxonomy list or multiple linked entries.
 
 ```cs
 @using Zengenti.Contensis.Delivery
@@ -491,7 +491,7 @@ Use [ ] to search through an object array e.g. a category taxonomy list or multi
     var query = new Query(
         Op.And(
             Op.EqualTo("sys.contentTypeId", "movie"), // get all movies
-            Op.EqualTo("categories[].sys.id", "action") // With a category of action
+            Op.EqualTo("categories.sys.id", "action") // With a category of action
         )
     );
 
