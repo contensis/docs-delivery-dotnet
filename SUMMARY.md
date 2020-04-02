@@ -31,6 +31,7 @@
 * [ContentType](/model/contenttype.md)
 * [Entry](/model/entry.md)
   * [Entry methods](/model/entry-methods.md)
+* [EntryWorkflow](/model/entry-workflow.md)
 * [Asset](/model/asset.md)
 * [VersionInfo](/model/versioninfo.md)
 * [Metadata](/model/metadata.md)
