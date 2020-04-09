@@ -17,16 +17,12 @@ These are the standard properties that all entries have. An entry can have multi
 | ContentTypeId | string  | The API identifier of the content type that the entry is based on |
 | ProjectId | string | The project identifier, e.g. "movieDb". Found in the project overview screen of the management console |
 | DataFormat | string | Either 'entry' or 'asset' |
-| Language | string | The language of the entry instance |
-| AvailableLanguages | IReadonlyCollection&lt;string&gt; | A list of available languages for the entry. |
 | Version | [VersionInfo](/model/versioninfo.md) | Version information for the entry |
 | Metadata | Metadata | Metadata associated with the entry instance |
 | Owner | string | The id of the entry owner |
 | Slug | string | The entry slug token |
 | Uri | string | The canonical location of the entry |
 | AllUris | IReadonlyCollection&lt;string&gt; | All the locations for the entry, including the canonical URI |
-| Workflow | [EntryWorkflow](/model/entry-workflow.md) | The current workflow details for the entry. |
-| IsPublished | boolean | Returns whether the entry is published |
 
 ## Methods
 
