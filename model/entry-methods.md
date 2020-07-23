@@ -7,7 +7,7 @@ Gets a field from an entry by *fieldName* and returns a dynamic object instance.
 ### Syntax
 
 ```cs
-public dynamic Get(string fieldName)
+public dynamic Get(string fieldName, bool autoResolve = true)
 {
 }
 ```
@@ -17,6 +17,10 @@ public dynamic Get(string fieldName)
 *fieldName*
 > Type: string  
 > The name of the requested field
+
+*autoResolve*
+> Type: string  
+> If set to `true` for a singular/list of entries, assets or images, it will automatically request the linked resource when invoked. A value of `false` should be specified if you only require the link properties such as Uri or contentTypeId and do not want the performance overhead of retrieving the entire resource. The default is `true`.
 
 ### Remarks
 
@@ -38,7 +42,7 @@ Gets a field from an entry by *fieldName* and returns a typed object instance.
 ### Syntax
 
 ```cs
-public T Get<T>(string fieldName)
+public T Get<T>(string fieldName, bool autoResolve = true)
 {
 }
 ```
@@ -51,6 +55,10 @@ public T Get<T>(string fieldName)
 *fieldName*
 > Type: string  
 > The name of the requested field
+
+*autoResolve*
+> Type: string  
+> If set to `true` for a singular/list of entries, assets or images, it will automatically request the linked resource when invoked. A value of `false` should be specified if you only require the link properties such as Uri or contentTypeId and do not want the performance overhead of retrieving the entire resource. The default is `true`.git
 
 ### Remarks
 

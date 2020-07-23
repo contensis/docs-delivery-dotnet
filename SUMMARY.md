@@ -31,12 +31,14 @@
 * [ContentType](/model/contenttype.md)
 * [Entry](/model/entry.md)
   * [Entry methods](/model/entry-methods.md)
+* [EntryWorkflow](/model/entry-workflow.md)
 * [Asset](/model/asset.md)
 * [VersionInfo](/model/versioninfo.md)
 * [Metadata](/model/metadata.md)
 * [ContensisClientConfiguration](/model/contensisclientconfiguration.md)
 * [Node](/model/node.md)
   * [Node methods](/model/node-methods.md)
+  * [NodeVersionInfo](/model/nodeversioninfo.md)
 
 ---
 
