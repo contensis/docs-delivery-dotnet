@@ -119,7 +119,7 @@ var query = new Query(
 
 ### FreeText
 
-In the example the field *synopsis* is searched upon for any words that match *gotham* or *dark* or *knight*.
+In the example the field *synopsis* is searched upon for any words that match *gotham* and *dark* and *knight*.
 
 ```cs
 var query = new Query(
